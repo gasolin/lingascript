@@ -12,10 +12,15 @@
   },
   "devDependencies": {},
   "scripts": {
-    "upgrade-ts": "rm -Rf typescript && git submodule update --remote",
-    "build": "cd typescript && npm install && jake local",
-    "test:en": "node typescript/built/local/tsc.js -p examples/en && node tests/test.js",
-    "test": "npm run test:en"
+    "build:cn": "cp src/zhcn/language.ts typescript/src/compiler/language.ts && npm run build",
+    "build:tw": "echo 'Traditional Chinese build is not supported yet'",
+    "build": "cd typescript && npm install && jake clean && jake local",
+    "install": "npm run update-ts",
+    "pretest:en": "node typescript/built/local/tsc.js -p examples/en",
+    "pretest:cn": "node typescript/built/local/tsc.js -p examples/cn",
+    "test": "npm run pretest:en && npm run pretest:cn && node tests/test.js",
+    "update-ts": "git submodule update --init --recursive",
+    "upgrade-ts": "rm -Rf typescript && git submodule update --remote"
   },
   "repository": {
     "type": "git",

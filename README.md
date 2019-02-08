@@ -13,13 +13,14 @@ $ git clone https://github.com/gasolin/lingascript.git
 $ cd lingascript
 $ npm install -g jake
 $ npm install
-$ npm build
 ```
 
-Build for different languages
+## Build for different languages
 
-```
-$ npm build lang=zhcn
+Simplified Chinese:
+
+```sh
+$ npm build:cn
 ```
 
 Make sure to check LingaScript's [examples](https://github.com/gasolin/lingascript/tree/master/examples) and the [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html) tutorial from TypeScript.
@@ -27,7 +28,7 @@ Make sure to check LingaScript's [examples](https://github.com/gasolin/lingascri
 Can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/compiler-options.html
 ) file for different output.
 
-ex: set `"locale": "zh-TW"` for Traditional Chinese error messages
+ex: set `"locale": "zh-CN"` for Simplified Chinese error messages
 
 ```js
 {
@@ -36,7 +37,7 @@ ex: set `"locale": "zh-TW"` for Traditional Chinese error messages
       "allowJs": true,
       "target": "es6",
       "diagnostics": true,
-      "locale": "zh-TW"
+      "locale": "zh-CN"
   },
   "include": [
       "./src/**/*"
