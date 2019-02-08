@@ -1,8 +1,10 @@
-# lingascript
+# LingaScript
 
-lingascript is a multilingal programming language, which support write code with non-English languages (currently support Traditional and Simplified Chinese).
+**This project is Work in Progress**
 
-lingascript is derived from Typescript and Javascript. With lingascript you can any environment that works for Javascript.
+LingaScript is a multilingal programming language, which support write code with non-English languages (currently support Traditional and Simplified Chinese).
+
+LingaScript is derived from Typescript and Javascript. With LingaScript you can any environment that works for Javascript.
 
 ## Usage
 
@@ -19,6 +21,8 @@ Build for different languages
 ```
 $ npm build lang=zhcn
 ```
+
+Make sure to check LingaScript's [examples](https://github.com/gasolin/lingascript/tree/master/examples) and the [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html) tutorial from TypeScript.
 
 
 ## Credit

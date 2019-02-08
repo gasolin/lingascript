@@ -107,3 +107,4 @@ var strLength = someValue.length;
 // Type assertions with as-syntax
 var someValue2 = "this is a string";
 var strLength2 = someValue2.length;
+let hello=''
