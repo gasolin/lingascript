@@ -2,9 +2,19 @@
 
 **This project is in early alpha stage, please use it at your own risk**
 
-LingaScript is a multilingal programming language, which support write code with non-English languages (currently support Traditional and Simplified Chinese).
+LingaScript is a multilingal programming language, which support write code with non-English languages.
 
-LingaScript is derived from Typescript and Javascript. With LingaScript you can any environment that works for Javascript.
+LingaScript is derived from Typescript and Javascript. LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
+
+Non-english programming adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
+
+## Support Languages
+
+- Simplified Chinese (cn)
+
+Plan to support:
+
+- Traditional Chinese (tw)
 
 ## Usage
 
@@ -46,11 +56,6 @@ You can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/
 ```
 
 
-## Credit
-
-lingascript is inspired by [zhpy](https://github.com/gasolin/zhpy/)(周蟒) and [CTS](https://github.com/program-in-chinese/CTS/)
-
-
 ## Develop
 
 lingascript use `file-patch` to patch typescript's compiler.
@@ -73,3 +78,7 @@ $ npm run upgrade-ts
 ## License
 
 Apache-2.0 License
+
+## Credit
+
+LingaScript is inspired by [zhpy](https://github.com/gasolin/zhpy/)(周蟒) and [CTS](https://github.com/program-in-chinese/CTS/issues/14)
