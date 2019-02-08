@@ -2,7 +2,7 @@ var fc = require('filecompare');
 const fs = require('fs');
 const path = require("path");
 
-let output = getPath('built/hello.js')
+let output = getPath('built/basic.js')
 let sample = getPath('tests/output.js')
 
 function getPath(filePath) {
