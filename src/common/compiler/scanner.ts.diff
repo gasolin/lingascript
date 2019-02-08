@@ -1,0 +1,482 @@
+@@ -3032,16 +3032,38 @@
+     
++%5BunicodeDic.Keywords.
+ abstract
++%5D
+ : Sy
+@@ -3098,18 +3098,87 @@
+        a
++bstract: Sy
+ n
++taxKind.AbstractKe
+ y
++word,%0D%0A        %5BunicodeDic.Keywords.any%5D
+ : Syntax
+@@ -3204,17 +3204,76 @@
+        a
++ny: SyntaxKind.AnyKeyword,%0D%0A        %5BunicodeDic.Keyword
+ s
++.as%5D
+ : Syntax
+@@ -3297,22 +3297,79 @@
+         
++as: SyntaxKind.AsKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ bigint
++%5D
+ : Syntax
+@@ -3398,22 +3398,87 @@
+        b
++igint: SyntaxKind.BigIntKeyword,%0D%0A        %5BunicodeDic.Keywords.b
+ oolean
++%5D
+ : Syntax
+@@ -3508,20 +3508,87 @@
+        b
++oolean: SyntaxKind.BooleanKeyword,%0D%0A        %5BunicodeDic.Keywords.b
+ reak
++%5D
+ : Syntax
+@@ -3615,20 +3615,83 @@
+         
++break: SyntaxKind.BreakKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ case
++%5D
+ : Syntax
+@@ -3719,19 +3719,80 @@
+       ca
++se: SyntaxKind.CaseKeyword,%0D%0A        %5BunicodeDic.Keywords.ca
+ tch
++%5D
+ : Syntax
+@@ -3820,20 +3820,83 @@
+        c
++atch: SyntaxKind.CatchKeyword,%0D%0A        %5BunicodeDic.Keywords.c
+ lass
++%5D
+ : Syntax
+@@ -3924,23 +3924,86 @@
+        c
++lass: SyntaxKind.ClassKeyword,%0D%0A        %5BunicodeDic.Keywords.c
+ ontinue
++%5D
+ : Syntax
+@@ -4036,16 +4036,126 @@
+      con
++tinue: SyntaxKind.ContinueKeyword,%0D%0A        %5BunicodeDic.Keywords.const%5D: SyntaxKind.ConstKeyword,%0D%0A        con
+ st: Synt
+@@ -4190,16 +4190,96 @@
+   %5B%22%22 + 
++unicodeDic.Keywords.constructor%5D: SyntaxKind.ConstructorKeyword,%0D%0A        %5B%22%22 + 
+ %22constru
+@@ -4330,16 +4330,38 @@
+     
++%5BunicodeDic.Keywords.
+ debugger
++%5D
+ : Sy
+@@ -4397,21 +4397,90 @@
+       de
++bugger: SyntaxKind.DebuggerKeyword,%0D%0A        %5BunicodeDic.Keywords.de
+ clare
++%5D
+ : Syntax
+@@ -4511,21 +4511,88 @@
+       de
++clare: SyntaxKind.DeclareKeyword,%0D%0A        %5BunicodeDic.Keywords.de
+ fault
++%5D
+ : Syntax
+@@ -4623,20 +4623,87 @@
+       de
++fau
+ l
++t: SyntaxKind.D
+ e
++faul
+ t
++K
+ e
++yword,%0D%0A        %5BunicodeDic.Keywords.delete%5D
+ : Syntax
+@@ -4732,17 +4732,82 @@
+        d
++elete: SyntaxKind.DeleteKeyword,%0D%0A        %5Bunic
+ o
++deDic.Keywords.do%5D
+ : Syntax
+@@ -4831,20 +4831,77 @@
+         
++do: SyntaxKind.DoKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ else
++%5D
+ : Syntax
+@@ -4928,19 +4928,80 @@
+        e
++lse: SyntaxKind.ElseKeyword,%0D%0A        %5BunicodeDic.Keywords.e
+ num
++%5D
+ : Syntax
+@@ -5028,21 +5028,82 @@
+        e
++num: SyntaxKind.EnumKeyword,%0D%0A        %5BunicodeDic.Keywords.e
+ xport
++%5D
+ : Syntax
+@@ -5133,21 +5133,86 @@
+       ex
++por
+ t
++: SyntaxKind.ExportK
+ e
++yword,%0D%0A        %5Bu
+ n
++icodeDic.Keywor
+ ds
++.extends%5D
+ : Syntax
+@@ -5237,21 +5237,88 @@
+ d,%0D%0A
++  
+       
++extends: SyntaxKind.ExtendsKeyword,%0D%0A
+   
++      %5BunicodeDic.Keywords.
+ false
++%5D
+ : Sy
+@@ -5350,22 +5350,85 @@
+        f
++alse: SyntaxKind.FalseKeyword,%0D%0A        %5BunicodeDic.Keywords.f
+ inally
++%5D
+ : Syntax
+@@ -5458,18 +5458,85 @@
+        f
++inally: SyntaxKind.FinallyKeyw
+ or
++d,%0D%0A        %5BunicodeDic.Keywords.for%5D
+ : Syntax
+@@ -5562,19 +5562,78 @@
+        f
++or: SyntaxKind.ForKeyword,%0D%0A        %5BunicodeDic.Keywords.f
+ rom
++%5D
+ : Syntax
+@@ -5660,23 +5660,84 @@
+        f
++rom: SyntaxKind.FromKeyword,%0D%0A        %5BunicodeDic.Keywords.f
+ unction
++%5D
+ : Syntax
+@@ -5767,19 +5767,88 @@
+         
++function: SyntaxKind.FunctionKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ get
++%5D
+ : Syntax
+@@ -5873,16 +5873,110 @@
+         
++get: SyntaxKind.GetKeyword,%0D%0A        %5BunicodeDic.Keywords.if%5D: SyntaxKind.IfKeyword,%0D%0A        
+ if: Synt
+@@ -6002,16 +6002,37 @@
+         
++%5BunicodeDic.Keywords.
+ implemen
+@@ -6033,16 +6033,17 @@
+ plements
++%5D
+ : Syntax
+@@ -6078,16 +6078,132 @@
+      imp
++lements: SyntaxKind.ImplementsKeyword,%0D%0A        %5BunicodeDic.Keywords.import%5D: SyntaxKind.ImportKeyword,%0D%0A        imp
+ ort: Syn
+@@ -6234,18 +6234,40 @@
+         
++%5BunicodeDic.Keywords.
+ in
++%5D
+ : Syntax
+@@ -6293,19 +6293,76 @@
+       in
++: SyntaxKind.InKeyword,%0D%0A        %5BunicodeDic.Keywords.in
+ fer
++%5D
+ : Syntax
+@@ -6395,16 +6395,79 @@
+   in
++fer: SyntaxKind.InferKeyword,%0D%0A        %5BunicodeDic.Keywords.in
+ stanceof
++%5D
+ : Sy
+@@ -6505,16 +6505,138 @@
+       in
++stanceof: SyntaxKind.InstanceOfKeyword,%0D%0A        %5BunicodeDic.Keywords.interface%5D: SyntaxKind.InterfaceKeyword,%0D%0A        in
+ terface:
+@@ -6648,32 +6648,89 @@
+ axKind.Interface
++Keyword,%0D%0A        %5BunicodeDic.Keywords.is%5D: SyntaxKind.Is
+ Keyword,%0D%0A      
+@@ -6766,16 +6766,79 @@
+         
++%5BunicodeDic.Keywords.keyof%5D: SyntaxKind.KeyOfKeyword,%0D%0A        
+ keyof: S
+@@ -6870,19 +6870,41 @@
+         
++%5BunicodeDic.Keywords.
+ let
++%5D
+ : Syntax
+@@ -6933,14 +6933,73 @@
+     
++let: SyntaxKind.LetKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ module
++%5D
+ : Sy
+@@ -7031,16 +7031,80 @@
+         
++module: SyntaxKind.ModuleKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ namespac
+@@ -7104,16 +7104,17 @@
+ amespace
++%5D
+ : Syntax
+@@ -7146,20 +7146,91 @@
+        n
++amespace: SyntaxKind.NamespaceKeyword,%0D%0A        %5BunicodeDic.Keywords.n
+ ever
++%5D
+ : Syntax
+@@ -7259,17 +7259,80 @@
+       ne
++ver: SyntaxKind.NeverKey
+ w
++ord,%0D%0A        %5BunicodeDic.Keywords.new%5D
+ : Syntax
+@@ -7358,19 +7358,78 @@
+        n
++ew: SyntaxKind.NewKeyword,%0D%0A        %5BunicodeDic.Keywords.n
+ ull
++%5D
+ : Syntax
+@@ -7457,20 +7457,81 @@
+       nu
++ll: SyntaxKind.NullKeyword,%0D%0A        %5BunicodeDic.Keywords.nu
+ mber
++%5D
+ : Syntax
+@@ -7563,14 +7563,79 @@
+     
++number: SyntaxKind.NumberKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ object
++%5D
+ : Sy
+@@ -7671,15 +7671,80 @@
+     
++object: SyntaxKind.ObjectKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ package
++%5D
+ : Sy
+@@ -7778,22 +7778,89 @@
+        p
++ackage: SyntaxKind.PackageKeyword,%0D%0A        %5BunicodeDic.Keywords.p
+ rivate
++%5D
+ : Syntax
+@@ -7891,23 +7891,90 @@
+       pr
++ivate: SyntaxKind.PrivateKeyword,%0D%0A        %5BunicodeDic.Keywords.pr
+ otected
++%5D
+ : Syntax
+@@ -8006,21 +8006,92 @@
+        p
++rotected: SyntaxKind.ProtectedKeyword,%0D%0A        %5BunicodeDic.Keywords.p
+ ublic
++%5D
+ : Syntax
+@@ -8123,16 +8123,81 @@
+     
++public: SyntaxKind.PublicKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ readonly
++%5D
+ : Sy
+@@ -8233,21 +8233,90 @@
+       re
++adonly: SyntaxKind.ReadonlyKeyword,%0D%0A        %5BunicodeDic.Keywords.re
+ quire
++%5D
+ : Syntax
+@@ -8349,14 +8349,81 @@
+     
++require: SyntaxKind.RequireKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ global
++%5D
+ : Sy
+@@ -8451,24 +8451,132 @@
+ d,%0D%0A        
++global: SyntaxKind.GlobalKeyword,%0D%0A        %5BunicodeDic.Keywords.return%5D: SyntaxKind.ReturnKeyword,%0D%0A        
+ return: Synt
+@@ -8606,19 +8606,41 @@
+         
++%5BunicodeDic.Keywords.
+ set
++%5D
+ : Syntax
+@@ -8666,21 +8666,80 @@
+        s
++et: Syn
+ ta
++xKind.Se
+ t
++Keyword,%0D%0A        %5Bun
+ ic
++odeDic.Keywords.static%5D
+ : Syntax
+@@ -8769,20 +8769,85 @@
+       st
++atic: SyntaxKind.StaticKeyword,%0D%0A        %5BunicodeDic.Keywords.st
+ ring
++%5D
+ : Syntax
+@@ -8876,20 +8876,85 @@
+        s
++tring: SyntaxKind.StringKeyword,%0D%0A        %5BunicodeDic.Keywords.s
+ uper
++%5D
+ : Syntax
+@@ -8982,21 +8982,84 @@
+        s
++uper: SyntaxKind.SuperKeyword,%0D%0A        %5BunicodeDic.Keywords.s
+ witch
++%5D
+ : Syntax
+@@ -9088,21 +9088,86 @@
+        s
++witch: SyntaxKind.SwitchKeyword,%0D%0A        %5BunicodeDic.Keywords.s
+ ymbol
++%5D
+ : Syntax
+@@ -9195,20 +9195,85 @@
+         
++symbol: SyntaxKind.SymbolKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ this
++%5D
+ : Syntax
+@@ -9301,19 +9301,80 @@
+       th
++is: SyntaxKind.ThisKeywo
+ r
++d,%0D%0A        %5Bunic
+ o
++deDic.Key
+ w
++ords.throw%5D
+ : Syntax
+@@ -9402,19 +9402,82 @@
+        t
++hrow: SyntaxKind.ThrowKeyword,%0D%0A        %5BunicodeDic.Keywords.t
+ rue
++%5D
+ : Syntax
+@@ -9505,17 +9505,78 @@
+       tr
++ue: S
+ y
++ntaxKind.TrueKeyword,%0D%0A        %5BunicodeDic.Keywords.try%5D
+ : Syntax
+@@ -9594,35 +9594,94 @@
+ word,%0D%0A        t
++ry: SyntaxKind.TryKeyword,%0D%0A        %5BunicodeDic.Keywords.t
+ ype
++%5D
+ : SyntaxKind.Typ
+@@ -9703,18 +9703,79 @@
+     type
++: SyntaxKind.TypeKeyword,%0D%0A        %5BunicodeDic.Keywords.type
+ of
++%5D
+ : Syntax
+@@ -9803,16 +9803,80 @@
+         
++typeof: SyntaxKind.TypeOfKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ undefine
+@@ -9876,16 +9876,17 @@
+ ndefined
++%5D
+ : Syntax
+@@ -9919,20 +9919,91 @@
+       un
++defined: SyntaxKind.UndefinedKeyword,%0D%0A        %5BunicodeDic.Keywords.un
+ ique
++%5D
+ : Syntax
+@@ -10033,21 +10033,86 @@
+       un
++ique: SyntaxKind.UniqueKeyword,%0D%0A        %5BunicodeDic.Keywords.un
+ known
++%5D
+ : Syntax
+@@ -10141,19 +10141,86 @@
+         
++unknown: SyntaxKind.UnknownKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ var
++%5D
+ : Syntax
+@@ -10246,19 +10246,78 @@
+        v
++ar: SyntaxKind.VarKeyw
+ o
++rd,%0D%0A        %5Bun
+ i
++co
+ d
++eDic.Keywords.void%5D
+ : Syntax
+@@ -10343,21 +10343,82 @@
+         
++void: SyntaxKind.VoidKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ while
++%5D
+ : Syntax
+@@ -10446,19 +10446,82 @@
+        w
++h
+ i
++le: Syn
+ t
++axKind.W
+ h
++ileKeyword,%0D%0A        %5BunicodeDic.Keywords.with%5D
+ : Syntax
+@@ -10551,13 +10551,74 @@
+     
++with: SyntaxKind.WithKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ yield
++%5D
+ : Sy
+@@ -10653,13 +10653,76 @@
+     
++yield: SyntaxKind.YieldKeyword,%0D%0A        %5BunicodeDic.Keywords.
+ async
++%5D
+ : Sy
+@@ -10754,16 +10754,120 @@
+        a
++sync: SyntaxKind.AsyncKeyword,%0D%0A        %5BunicodeDic.Keywords.await%5D: SyntaxKind.AwaitKeyword,%0D%0A        a
+ wait: Sy
+@@ -10872,32 +10872,89 @@
+ SyntaxKind.Await
++Keyword,%0D%0A        %5BunicodeDic.Keywords.of%5D: SyntaxKind.Of
+ Keyword,%0D%0A      
+@@ -81055,32 +81055,35 @@
+                 
++// 
+ const ch = token
+@@ -81111,32 +81111,35 @@
+ %0A               
++ //
+  if (ch %3E= Chara
+@@ -81377,32 +81377,35 @@
+ %0A               
++ //
+  %7D%0D%0A            
