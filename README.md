@@ -23,6 +23,7 @@ $ git clone https://github.com/gasolin/lingascript.git
 $ cd lingascript
 $ npm install -g jake
 $ npm install
+$ npm run build:cn
 ```
 
 ## Build for different languages
@@ -30,10 +31,14 @@ $ npm install
 Simplified Chinese:
 
 ```sh
-$ npm build:cn
+$ npm run build:cn
 ```
 
 once build is complete, you can run command `node /built/local/tsc.js` to compile source code in [examples/cn](https://github.com/gasolin/lingascript/tree/master/examples/cn) with simplified chinese.
+
+```sh
+node typescript/built/local/tsc.js -p examples/cn
+```
 
 The example comes from TypeScript's [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html) tutorial.
 
