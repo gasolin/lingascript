@@ -6,7 +6,7 @@ LingaScript is a multilingal programming language, which support write code with
 
 LingaScript is derived from Typescript and Javascript. LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
 
-Non-english programming adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
+[Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
 
 ## Support Languages
 
