@@ -1,27 +1,29 @@
 // https://www.typescriptlang.org/docs/handbook/basic-types.html
 // Boolean
-var isDone = false;
+let isDone = false;
 // Number
-var decimal = 6;
-var hex = 0xf00d;
-var binary = 10;
-var octal = 484;
+let decimal = 6;
+let hex = 0xf00d;
+let binary = 0b1010;
+let octal = 0o744;
 // String
-var color = "blue";
+let color = "blue";
 color = 'red';
 // longer String
-var fullName = "Bob Bobbington";
-var age = 37;
-var sentence = "Hello, my name is " + fullName + ".\n\n" +
+let fullName = `Bob Bobbington`;
+let age = 37;
+let sentence = "Hello, my name is " + fullName + ".\n\n" +
     "I'll be " + (age + 1) + " years old next month.";
 // Template String
-var sentencet = "Hello, my name is " + fullName + ".\n\nI'll be " + (age + 1) + " years old next month.";
+let sentencet = `Hello, my name is ${fullName}.
+
+I'll be ${age + 1} years old next month.`;
 // Array
-var list = [1, 2, 3];
-var list2 = [1, 2, 3];
+let list = [1, 2, 3];
+let list2 = [1, 2, 3];
 // Tuple
 // Declare a tuple type
-var x;
+let x;
 // Initialize it
 x = ["hello", 10]; // OK
 // Initialize it incorrectly
@@ -38,49 +40,49 @@ var Color;
     Color[Color["Green"] = 1] = "Green";
     Color[Color["Blue"] = 2] = "Blue";
 })(Color || (Color = {}));
-var c = Color.Green;
+let c = Color.Green;
 var Color2;
 (function (Color2) {
     Color2[Color2["Red"] = 1] = "Red";
     Color2[Color2["Green"] = 2] = "Green";
     Color2[Color2["Blue"] = 3] = "Blue";
 })(Color2 || (Color2 = {}));
-var c2 = Color2.Green;
+let c2 = Color2.Green;
 var Color3;
 (function (Color3) {
     Color3[Color3["Red"] = 1] = "Red";
     Color3[Color3["Green"] = 2] = "Green";
     Color3[Color3["Blue"] = 4] = "Blue";
 })(Color3 || (Color3 = {}));
-var c3 = Color3.Green;
+let c3 = Color3.Green;
 var Color4;
 (function (Color4) {
     Color4[Color4["Red"] = 1] = "Red";
     Color4[Color4["Green"] = 2] = "Green";
     Color4[Color4["Blue"] = 3] = "Blue";
 })(Color4 || (Color4 = {}));
-var colorName = Color4[2];
+let colorName = Color4[2];
 console.log(colorName); // Displays 'Green' as its value is 2 above
 // Any
-var notSure = 4;
+let notSure = 4;
 notSure = "maybe a string instead";
 notSure = false; // okay, definitely a boolean
-var notSure2 = 4;
+let notSure2 = 4;
 notSure2.ifItExists(); // okay, ifItExists might exist at runtime
 notSure2.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
-var prettySure = 4;
+let prettySure = 4;
 // prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
-var listAny = [1, true, "free"];
+let listAny = [1, true, "free"];
 listAny[1] = 100;
 // Void
 function warnUser() {
     console.log("This is my warning message");
 }
-var unusable = undefined;
+let unusable = undefined;
 // Null and Undefined
 // Not much else we can assign to these variables!
-var u = undefined;
-var n = null;
+let u = undefined;
+let n = null;
 // Never
 // Function returning never must have unreachable end point
 function error(message) {
@@ -102,9 +104,8 @@ create(null); // OK
 // create(false); // Error
 // create(undefined); // Error
 // Type assertions
-var someValue = "this is a string";
-var strLength = someValue.length;
+let someValue = "this is a string";
+let strLength = someValue.length;
 // Type assertions with as-syntax
-var someValue2 = "this is a string";
-var strLength2 = someValue2.length;
-let hello=''
+let someValue2 = "this is a string";
+let strLength2 = someValue2.length;
