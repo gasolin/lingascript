@@ -56,6 +56,14 @@ lingascript is inspired by [zhpy](https://github.com/gasolin/zhpy/)(周蟒) and 
 lingascript use `file-patch` to patch typescript's compiler.
 
 
+To re-build from the clean typescript
+
+```sh
+$ rm -rf typescript
+$ npm run update-ts
+$ npm run build:cn
+```
+
 To upgrade the typescript's version:
 
 ```sh
