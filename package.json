@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build:cn": "cp src/zhcn/language.ts typescript/src/compiler/language.ts && npm run build",
+    "build:cn": "cp src/cn/language.ts typescript/src/compiler/language.ts && npm run build",
     "build:tw": "echo 'Traditional Chinese build is not supported yet'",
     "build": "cd typescript && npm install && jake clean && jake local",
     "install": "npm run update-ts",

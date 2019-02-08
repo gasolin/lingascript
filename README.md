@@ -23,12 +23,12 @@ Simplified Chinese:
 $ npm build:cn
 ```
 
-Make sure to check LingaScript's [examples](https://github.com/gasolin/lingascript/tree/master/examples) and the [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html) tutorial from TypeScript.
+once build is complete, you can run command `node /built/local/tsc.js` to compile source code in [examples/cn](https://github.com/gasolin/lingascript/tree/master/examples/cn) with simplified chinese.
 
-Can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/compiler-options.html
-) file for different output.
+The example comes from TypeScript's [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html) tutorial.
 
-ex: set `"locale": "zh-CN"` for Simplified Chinese error messages
+You can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/compiler-options.html
+) file for different output target (es5, es6, es2018...).
 
 ```js
 {
@@ -56,8 +56,12 @@ lingascript is inspired by [zhpy](https://github.com/gasolin/zhpy/)(周蟒) and 
 lingascript use `file-patch` to patch typescript's compiler.
 
 
-Update typescript version:
+To upgrade the typescript's version:
 
 ```sh
 $ npm run upgrade-ts
 ```
+
+## License
+
+Apache-2.0 License
