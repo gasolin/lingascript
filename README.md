@@ -1,6 +1,6 @@
 # LingaScript
 
-**This project is Work in Progress**
+**This project is in early alpha stage, please use it at your own risk**
 
 LingaScript is a multilingal programming language, which support write code with non-English languages (currently support Traditional and Simplified Chinese).
 
