@@ -8,6 +8,7 @@ LingaScript is derived from Typescript and Javascript. LingaScript can be compil
 
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
 
+
 ## Support Languages
 
 - Simplified Chinese (cn)
@@ -15,6 +16,7 @@ LingaScript is derived from Typescript and Javascript. LingaScript can be compil
 Plan to support:
 
 - Traditional Chinese (tw)
+
 
 ## Usage
 
@@ -25,6 +27,7 @@ $ npm install -g jake
 $ npm install
 $ npm run build:cn
 ```
+
 
 ## Build for different languages
 
@@ -65,8 +68,19 @@ You can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/
 
 lingascript use `file-patch` to patch typescript's compiler.
 
+### Normal Validation phase
 
-To re-build from the clean typescript
+The `npm run build:cn` will do
+
+1. patch clean typescript with .diff files in src/. The related scripts are stored in [scripts/](https://github.com/gasolin/lingascript/tree/master/scripts) folder. 
+
+2. `npm run build` will be used to build the patched typescript
+
+3. Run `npm run test` to make sure the built tool works.
+
+### Get a clean typescript/ folder
+
+You need to remove typescript for a clean patch. To re-build from the clean typescript, you can run
 
 ```sh
 $ rm -rf typescript
@@ -74,15 +88,42 @@ $ npm run update-ts
 $ npm run build:cn
 ```
 
-To upgrade the typescript's version:
+### Debugging phase
+
+1. You can disable patch process by removing the "prebuild" script in `package.json`'s `scripts` section.
+
+2. Follow Normal Validation phase, if the modifications works, we can backup the modified files from `typescript/src` to `src/` via
+
+```sh
+npm run backup
+```
+
+Edit [scripts/backup.sh](https://github.com/gasolin/lingascript/tree/master/scripts) to include the new modified files.
+
+3. To generate `.diff` files, compare the backup-ed modified files with the clean `typescript/src` folder via
+
+```sh
+npm run diff
+```
+
+Edit [scripts/diff.sh](https://github.com/gasolin/lingascript/tree/master/scripts) to include the new modified files.
+
+### Upgrade Typescript Version
+
+To upgrade the typescript's version (to v3.4.0 for example):
 
 ```sh
 $ npm run upgrade-ts
+$ cd typescript
+$ git checkout v3.4.0
+$ cd ..
+$ git add typescript
 ```
 
 ## License
 
 Apache-2.0 License
+
 
 ## Credit
 
