@@ -1,180 +1,82 @@
-@@ -38858,32 +38858,590 @@
+@@ -38814,32 +38814,590 @@
  TypeofEQFunction
 +,%0D%0A            %5BunicodeDic.Keywords.string%5D: TypeFacts.TypeofEQString,%0D%0A            %5BunicodeDic.Keywords.number%5D: TypeFacts.TypeofEQNumber,%0D%0A            %5BunicodeDic.Keywords.bigint%5D: TypeFacts.TypeofEQBigInt,%0D%0A            %5BunicodeDic.Keywords.boolean%5D: TypeFacts.TypeofEQBoolean,%0D%0A            %5BunicodeDic.Keywords.symbol%5D: TypeFacts.TypeofEQSymbol,%0D%0A            %5BunicodeDic.Keywords.undefined%5D: TypeFacts.EQUndefined,%0D%0A            %5BunicodeDic.Keywords.object%5D: TypeFacts.TypeofEQObject,%0D%0A            %5BunicodeDic.Keywords.function%5D: TypeFacts.TypeofEQFunction
  %0D%0A        %7D);%0D%0A 
-@@ -39429,32 +39429,34 @@
+@@ -39385,32 +39385,34 @@
  ion%0D%0A        %7D);
 +%0D%0A
  %0D%0A        const 
-@@ -40156,24 +40156,365 @@
+@@ -40112,24 +40112,365 @@
  ndefinedType
 -
 +,%0D%0A            %5BunicodeDic.Keywords.string%5D: stringType,%0D%0A            %5BunicodeDic.Keywords.number%5D: numberType,%0D%0A            %5BunicodeDic.Keywords.bigint%5D: bigintType,%0D%0A            %5BunicodeDic.Keywords.boolean%5D: booleanType,%0D%0A            %5BunicodeDic.Keywords.symbol%5D: esSymbolType,%0D%0A            %5BunicodeDic.Keywords.undefined%5D: undefinedType,
  %0D%0A        %7D)
-@@ -274217,24 +274217,80 @@
- %22private%22;%0D%0A
-+                // return unicodeDic.Keywords.private;%0D%0A
-             
-@@ -274387,32 +274387,90 @@
+@@ -273190,32 +273190,88 @@
+ %22;%0D%0A            
+-
++    // return unicodeDic.Keywords.private;%0D%0A            
+ %7D%0D%0A            i
+@@ -273352,32 +273352,90 @@
  %22;%0D%0A            
 +    // return unicodeDic.Keywords.protected;%0D%0A            
  %7D%0D%0A            r
-@@ -274483,16 +274483,67 @@
+@@ -273448,16 +273448,67 @@
  %22public%22
 +;%0D%0A            // return unicodeDic.Keywords.public
  ;%0D%0A     
-@@ -278127,24 +278127,80 @@
- %22default%22;%0D%0A
-+                // return unicodeDic.Keywords.default;%0D%0A
-             
-@@ -531659,32 +531659,90 @@
- case %22String%22:%0D%0A
-+                    case unicodeDic.InternalType.String:%0D%0A
+@@ -277093,16 +277093,72 @@
+ default%22
++;%0D%0A                // return unicodeDic.Keywords.default
+ ;%0D%0A     
+@@ -529776,32 +529776,90 @@
                  
-@@ -531850,32 +531850,90 @@
+-
++case unicodeDic.InternalType.String:%0D%0A                    
+     checkNoTypeA
+@@ -529947,32 +529947,90 @@
  case %22Number%22:%0D%0A
 +                    case unicodeDic.InternalType.Number:%0D%0A
                  
-@@ -532042,32 +532042,91 @@
+@@ -530139,32 +530139,91 @@
  ase %22Boolean%22:%0D%0A
 +                    case unicodeDic.InternalType.Boolean:%0D%0A
                  
-@@ -532237,24 +532237,80 @@
+@@ -530334,24 +530334,80 @@
  se %22Void%22:%0D%0A
 +                    case unicodeDic.InternalType.Void:%0D%0A
              
-@@ -532427,24 +532427,85 @@
+@@ -530524,24 +530524,85 @@
  ndefined%22:%0D%0A
 +                    case unicodeDic.InternalType.Undefined:%0D%0A
              
-@@ -532622,24 +532622,80 @@
+@@ -530719,24 +530719,80 @@
  se %22Null%22:%0D%0A
 +                    case unicodeDic.InternalType.Null:%0D%0A
              
-@@ -532845,32 +532845,148 @@
- se %22function%22:%0D%0A
-+                    case unicodeDic.Keywords.function:%0D%0A                    case unicodeDic.InternalType.Function:%0D%0A
+@@ -530929,32 +530929,92 @@
+            case 
++unicodeDic.InternalType.Function:%0D%0A                    case 
+ %22function%22:%0D%0A   
+@@ -531022,32 +531022,88 @@
                  
-@@ -533136,32 +533136,146 @@
-  case %22array%22:%0D%0A
-+                    case unicodeDic.InternalType.Array:%0D%0A                    case unicodeDic.InternalType.array:%0D%0A
-                 
-@@ -533414,32 +533414,140 @@
- ase %22promise%22:%0D%0A
-+                    case unicodeDic.Promise.Promise:%0D%0A                    case unicodeDic.Promise.promise:%0D%0A
-                 
-@@ -533662,32 +533662,90 @@
- case %22Object%22:%0D%0A
-+                    case unicodeDic.InternalType.Object:%0D%0A
-                 
-@@ -971279,24 +971279,25 @@
- argetType = 
-+(
- literal.text
-@@ -971312,16 +971312,89 @@
- nction%22 
-+%7C%7C literal.text === unicodeDic.Keywords.function)%0D%0A                      
- ? global
-@@ -971401,24 +971401,47 @@
- FunctionType
-+%0D%0A                     
-  : typeofTyp
-@@ -1776313,24 +1776313,42 @@
- , text, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- );%0D%0A    
-@@ -1776557,26 +1776557,44 @@
- , text, 
--%22
-+unicodeDic.Keywords.
- readonly
--%22
- );%0D%0A    
-@@ -1776796,31 +1776796,49 @@
- fier, text, 
--%22
-+unicodeDic.Keywords.
- async
--%22
- );%0D%0A        
-@@ -1777428,34 +1777428,52 @@
- fier, text, 
--%22
-+unicodeDic.Keywords.
- abstract
--%22
- );%0D%0A        
-@@ -1777654,26 +1777654,44 @@
- , text, 
--%22
-+unicodeDic.Keywords.
- abstract
--%22
- );%0D%0A    
-@@ -1778058,24 +1778058,42 @@
- y_seen, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- );%0D%0A    
-@@ -1778300,28 +1778300,64 @@
- er, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- , 
--%22
-+unicodeDic.Keywords.
- readonly
--%22
- );%0D%0A
-@@ -1778565,25 +1778565,61 @@
- er, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- , 
--%22
-+unicodeDic.Keywords.
- async
--%22
- );%0D%0A
-@@ -1778908,24 +1778908,42 @@
- lement, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- );%0D%0A    
-@@ -1779155,24 +1779155,42 @@
- ameter, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- );%0D%0A    
-@@ -1779400,36 +1779400,72 @@
- difier, 
--%22
-+unicodeDic.Keywords.
- static
--%22
- , 
--%22
-+unicodeDic.Keywords.
- abstract
--%22
- );%0D%0A    
-@@ -1779844,26 +1779844,44 @@
- y_seen, 
--%22
-+unicodeDic.Keywords.
- readonly
--%22
- );%0D%0A    
++case unicodeDic.Keywords.function:%0D%0A                    
+     checkNoTypeA
+@@ -531235,15 +531235,129 @@
+ ase 
++unicodeDic.InternalType.Array:%0D%0A                    case 
+ %22array%22
++:%0D%0A                    case unicodeDic.InternalType.array
+ :%0D%0A 
+@@ -531503,24 +531503,78 @@
+        case 
++unicodeDic.Promise.Promise:%0D%0A                    case 
+ %22promise%22:%0D%0A
+@@ -531566,24 +531566,78 @@
+ se %22promise%22
++:%0D%0A                    case unicodeDic.Promise.promise
+ :%0D%0A         
+@@ -531760,24 +531760,82 @@
+ ase %22Object%22
+-
++:%0D%0A                    case unicodeDic.InternalType.Object
+ :%0D%0A         

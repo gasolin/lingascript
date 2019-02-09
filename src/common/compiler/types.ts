@@ -611,7 +611,7 @@ namespace ts {
     export interface Node extends TextRange {
         kind: SyntaxKind;
         flags: NodeFlags;
-        /* @internal */ modifierFlagsCache: ModifierFlags;
+        /* @internal */ modifierFlagsCache?: ModifierFlags;
         /* @internal */ transformFlags: TransformFlags;       // Flags for transforms, possibly undefined
         decorators?: NodeArray<Decorator>;                    // Array of decorators (in document order)
         modifiers?: ModifiersArray;                           // Array of modifiers
@@ -1235,7 +1235,7 @@ namespace ts {
 
     export interface TypeOperatorNode extends TypeNode {
         kind: SyntaxKind.TypeOperator;
-        operator: SyntaxKind.KeyOfKeyword | SyntaxKind.UniqueKeyword | SyntaxKind.ReadonlyKeyword;
+        operator: SyntaxKind.KeyOfKeyword | SyntaxKind.UniqueKeyword;
         type: TypeNode;
     }
 
@@ -4065,7 +4065,6 @@ namespace ts {
     export interface TupleType extends GenericType {
         minLength: number;
         hasRestElement: boolean;
-        readonly: boolean;
         associatedNames?: __String[];
     }
 
@@ -4116,6 +4115,7 @@ namespace ts {
         templateType?: Type;
         modifiersType?: Type;
         resolvedApparentType?: Type;
+        instantiating?: boolean;
     }
 
     export interface EvolvingArrayType extends ObjectType {
@@ -4342,7 +4342,6 @@ namespace ts {
         None            =      0,  // No special inference behaviors
         NoDefault       = 1 << 0,  // Infer unknownType for no inferences (otherwise anyType or emptyObjectType)
         AnyDefault      = 1 << 1,  // Infer anyType for no inferences (otherwise emptyObjectType)
-        NoFixing        = 1 << 2,  // Disable type parameter fixing
     }
 
     /**
@@ -4371,7 +4370,6 @@ namespace ts {
         inferences: InferenceInfo[];                  // Inferences made for each type parameter
         flags: InferenceFlags;                        // Inference flags
         compareTypes: TypeComparer;                   // Type comparer function
-        returnMapper?: TypeMapper;                    // Type mapper for inferences from return types (if any)
     }
 
     /* @internal */
@@ -4660,8 +4658,7 @@ namespace ts {
         ES2016 = 3,
         ES2017 = 4,
         ES2018 = 5,
-        ES2019 = 6,
-        ESNext = 7,
+        ESNext = 6,
         JSON = 100,
         Latest = ESNext,
     }
@@ -5074,8 +5071,6 @@ namespace ts {
         ContainsDynamicImport = 1 << 24,
         Super = 1 << 25,
         ContainsSuper = 1 << 26,
-        ContainsES2018 = 1 << 27,
-        ContainsES2019 = 1 << 28,
 
         // Please leave this as 1 << 29.
         // It is the maximum bit we can set before we outgrow the size of a v8 small integer (SMI) on an x86 system.
@@ -5087,8 +5082,6 @@ namespace ts {
         AssertTypeScript = TypeScript | ContainsTypeScript,
         AssertJsx = ContainsJsx,
         AssertESNext = ContainsESNext,
-        AssertES2019 = ContainsES2019,
-        AssertES2018 = ContainsES2018,
         AssertES2017 = ContainsES2017,
         AssertES2016 = ContainsES2016,
         AssertES2015 = ES2015 | ContainsES2015,
@@ -5869,7 +5862,7 @@ namespace ts {
 
     export interface UserPreferences {
         readonly disableSuggestions?: boolean;
-        readonly quotePreference?: "auto" | "double" | "single";
+        readonly quotePreference?: "double" | "single";
         readonly includeCompletionsForModuleExports?: boolean;
         readonly includeCompletionsWithInsertText?: boolean;
         readonly importModuleSpecifierPreference?: "relative" | "non-relative";

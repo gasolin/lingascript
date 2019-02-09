@@ -468,15 +468,15 @@
  SyntaxKind.Await
 +Keyword,%0D%0A        %5BunicodeDic.Keywords.of%5D: SyntaxKind.Of
  Keyword,%0D%0A      
-@@ -81055,32 +81055,35 @@
+@@ -80870,32 +80870,35 @@
                  
 +// 
  const ch = token
-@@ -81111,32 +81111,35 @@
+@@ -80926,32 +80926,35 @@
  %0A               
 + //
   if (ch %3E= Chara
-@@ -81377,32 +81377,35 @@
+@@ -81192,32 +81192,35 @@
  %0A               
 + //
   %7D%0D%0A            
