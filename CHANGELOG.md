@@ -1,6 +1,7 @@
 # 0.1 initial release (in progress)
 
+- Based on typescript v3.3.1
 - Support languages:
   - Simplified Chinese
 - patch typescript through npm scripts and file-patch
-- basic tests passed
+- Basic tests passed
