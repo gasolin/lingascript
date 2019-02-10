@@ -78,19 +78,20 @@ The `npm run build:cn` will do
 
 3. Run `npm run test` to make sure the built tool works.
 
-### Get a clean typescript/ folder
+### Rebuild from a clean typescript/ folder
 
 You need to remove typescript for a clean patch. To re-build from the clean typescript, you can run
 
 ```sh
-$ rm -rf typescript
-$ npm run update-ts
+$ npm run clean
 $ npm run build:cn
 ```
 
+check the `clean` and `build:cn` script `package.json`'s `scripts` section for the  execute detail.
+
 ### Debugging phase
 
-1. You can disable patch process by removing the "prebuild" script in `package.json`'s `scripts` section.
+1. You can disable patch process by removing the `prebuild` script in `package.json`'s `scripts` section.
 
 2. Follow Normal Validation phase, if the modifications works, we can backup the modified files from `typescript/src` to `src/` via
 
