@@ -120,9 +120,9 @@ create(null); // OK
 // Type assertions
 变量 someValue: any = "this is a string";
 
-变量 strLength: 数字 = (<string>someValue).length;
+变量 strLength: 数字 = (<文字>someValue).length;
 
 // Type assertions with as-syntax
 变量 someValue2: any = "this is a string";
 
-变量 strLength2: 数字 = (someValue2 as string).length;
+变量 strLength2: 数字 = (someValue2 转为 文字).length;
