@@ -25,16 +25,9 @@ $ npm install
 $ npm run build:cn
 ```
 
+`build:cn` will build for Simplified Chinese support and `build:tw` will build for Traditional Chinese support.
 
-## Build for different languages
-
-Simplified Chinese:
-
-```sh
-$ npm run build:cn
-```
-
-once build is complete, you can run command `node /built/local/tsc.js` to compile source code in [examples/cn](https://github.com/gasolin/lingascript/tree/master/examples/cn) with simplified chinese.
+Once build is complete, you can run command `node /built/local/tsc.js` to compile source code in [examples/cn](https://github.com/gasolin/lingascript/tree/master/examples/cn) with simplified chinese.
 
 ```sh
 node typescript/built/local/tsc.js -p examples/cn
