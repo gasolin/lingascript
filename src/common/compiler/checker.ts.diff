@@ -11,72 +11,183 @@
 -
 +,%0D%0A            %5BunicodeDic.Keywords.string%5D: stringType,%0D%0A            %5BunicodeDic.Keywords.number%5D: numberType,%0D%0A            %5BunicodeDic.Keywords.bigint%5D: bigintType,%0D%0A            %5BunicodeDic.Keywords.boolean%5D: booleanType,%0D%0A            %5BunicodeDic.Keywords.symbol%5D: esSymbolType,%0D%0A            %5BunicodeDic.Keywords.undefined%5D: undefinedType,
  %0D%0A        %7D)
-@@ -273190,32 +273190,88 @@
- %22;%0D%0A            
+@@ -87093,32 +87093,33 @@
+ ags.Variable && 
++(
+ name === %22argume
+@@ -87114,32 +87114,75 @@
+  === %22arguments%22
++ %7C%7C name === unicodeDic.Function.arguments)
+ ) %7B%0D%0A           
+@@ -87440,24 +87440,25 @@
+ Variable && 
++(
+ name === %22ar
+@@ -87465,16 +87465,59 @@
+ guments%22
++ %7C%7C name === unicodeDic.Function.arguments)
+ ) %7B%0D%0A   
+@@ -90738,24 +90738,25 @@
+ ndicator && 
++(
+ name === %22ex
+@@ -90761,16 +90761,59 @@
+ exports%22
++ %7C%7C name === unicodeDic.JavaScript.exports)
+  && mean
+@@ -103836,16 +103836,92 @@
+ %22Symbol%22
 -
-+    // return unicodeDic.Keywords.private;%0D%0A            
- %7D%0D%0A            i
-@@ -273352,32 +273352,90 @@
++ %7C%7C name === unicodeDic.Promise.Promise %7C%7C name === unicodeDic.Symbol.Symbol
+ )%0D%0A     
+@@ -273390,24 +273390,80 @@
+ %22private%22;%0D%0A
++                // return unicodeDic.Keywords.private;%0D%0A
+             
+@@ -273560,32 +273560,90 @@
  %22;%0D%0A            
 +    // return unicodeDic.Keywords.protected;%0D%0A            
  %7D%0D%0A            r
-@@ -273448,16 +273448,67 @@
+@@ -273656,16 +273656,67 @@
  %22public%22
 +;%0D%0A            // return unicodeDic.Keywords.public
  ;%0D%0A     
-@@ -277093,16 +277093,72 @@
- default%22
-+;%0D%0A                // return unicodeDic.Keywords.default
- ;%0D%0A     
-@@ -529776,32 +529776,90 @@
+@@ -277300,24 +277300,80 @@
+ %22default%22;%0D%0A
++                // return unicodeDic.Keywords.default;%0D%0A
+             
+@@ -491249,16 +491249,17 @@
+ return (
++(
+ %3CIdentif
+@@ -491295,16 +491295,85 @@
+ guments%22
++ %7C%7C (%3CIdentifier%3Enode).escapedText === unicodeDic.Function.arguments)
+  && isEx
+@@ -530034,32 +530034,90 @@
+ case %22String%22:%0D%0A
++                    case unicodeDic.InternalType.String:%0D%0A
                  
--
-+case unicodeDic.InternalType.String:%0D%0A                    
-     checkNoTypeA
-@@ -529947,32 +529947,90 @@
+@@ -530225,32 +530225,90 @@
  case %22Number%22:%0D%0A
 +                    case unicodeDic.InternalType.Number:%0D%0A
                  
-@@ -530139,32 +530139,91 @@
+@@ -530417,32 +530417,91 @@
  ase %22Boolean%22:%0D%0A
 +                    case unicodeDic.InternalType.Boolean:%0D%0A
                  
-@@ -530334,24 +530334,80 @@
+@@ -530612,24 +530612,80 @@
  se %22Void%22:%0D%0A
 +                    case unicodeDic.InternalType.Void:%0D%0A
              
-@@ -530524,24 +530524,85 @@
+@@ -530802,24 +530802,85 @@
  ndefined%22:%0D%0A
 +                    case unicodeDic.InternalType.Undefined:%0D%0A
              
-@@ -530719,24 +530719,80 @@
+@@ -530997,24 +530997,80 @@
  se %22Null%22:%0D%0A
 +                    case unicodeDic.InternalType.Null:%0D%0A
              
-@@ -530929,32 +530929,92 @@
+@@ -531207,32 +531207,92 @@
             case 
 +unicodeDic.InternalType.Function:%0D%0A                    case 
  %22function%22:%0D%0A   
-@@ -531022,32 +531022,88 @@
+@@ -531300,32 +531300,88 @@
                  
 +case unicodeDic.Keywords.function:%0D%0A                    
      checkNoTypeA
-@@ -531235,15 +531235,129 @@
+@@ -531513,15 +531513,129 @@
  ase 
 +unicodeDic.InternalType.Array:%0D%0A                    case 
  %22array%22
 +:%0D%0A                    case unicodeDic.InternalType.array
  :%0D%0A 
-@@ -531503,24 +531503,78 @@
+@@ -531781,24 +531781,78 @@
         case 
 +unicodeDic.Promise.Promise:%0D%0A                    case 
  %22promise%22:%0D%0A
-@@ -531566,24 +531566,78 @@
+@@ -531844,24 +531844,78 @@
  se %22promise%22
 +:%0D%0A                    case unicodeDic.Promise.promise
  :%0D%0A         
-@@ -531760,24 +531760,82 @@
- ase %22Object%22
+@@ -532037,32 +532037,90 @@
+ case %22Object%22:%0D%0A
++                    case unicodeDic.InternalType.Object:%0D%0A
+                 
+@@ -908641,32 +908641,33 @@
+                 
++(
+ resolved.members
+@@ -908685,24 +908685,87 @@
+  as __String
++) %7C%7C resolved.members.get(unicodeDic.Function.bind as __String)
+ ) && isTypeS
+@@ -932672,24 +932672,124 @@
+ length%22 %7C%7C%0D%0A
++                (%3CPropertyAccessExpression%3Eparent).name.escapedText === unicodeDic.Array.length %7C%7C%0D%0A
+             
+@@ -974993,32 +974993,105 @@
+ pe%22 as __String)
 -
-+:%0D%0A                    case unicodeDic.InternalType.Object
- :%0D%0A         
++ %7C%7C getPropertyOfType(rightType, unicodeDic.Object.prototype as __String)
+ ;%0D%0A             
+@@ -1269832,24 +1269832,25 @@
+ on(left) && 
++(
+ left.name.es
+@@ -1269868,16 +1269868,68 @@
+ == %22for%22
++ %7C%7C left.name.escapedText === unicodeDic.Symbol.for)
+ ) %7B%0D%0A   
+@@ -1361229,24 +1361229,25 @@
+ ntifier && (
++(
+ node as Iden
+@@ -1361276,16 +1361276,82 @@
+ = %22eval%22
++ %7C%7C (node as Identifier).escapedText === unicodeDic.Function.eval)
+ ;%0D%0A     
+@@ -1409108,32 +1409108,324 @@
+ (memberName) %7B%0D%0A
++                        case unicodeDic.Function.name:%0D%0A                        case unicodeDic.Function.length:%0D%0A                        case unicodeDic.Function.caller:%0D%0A                        case unicodeDic.Function.arguments:%0D%0A                        case unicodeDic.Object.prototype:%0D%0A
+                 
+@@ -1466331,17 +1466331,43 @@
+ ifier &&
++%0D%0A
+  
++                       (
+ promiseC
+@@ -1466407,18 +1466407,113 @@
+ romise%22 
++%7C%7C promiseConstructorName.escapedText === unicodeDic.Promise.Promise) 
+ &&
++%0D%0A                       
+  getTarg
+@@ -1513232,32 +1513232,205 @@
+ name, %22exports%22)
+-
++%0D%0A                && !needCollisionCheckForIdentifier(node, name, unicodeDic.Keywords.require) && !needCollisionCheckForIdentifier(node, name, unicodeDic.JavaScript.exports)
+ ) %7B%0D%0A           
+@@ -1560885,32 +1560885,120 @@
+ xt%22 as __String)
+-
++ %7C%7C%0D%0A                getTypeOfPropertyOfType(type, unicodeDic.Iterator.next as __String)
+ ;%0D%0A            i
+@@ -1562288,24 +1562288,25 @@
+ xtResult && 
++(
+ getTypeOfPro
+@@ -1562340,32 +1562340,111 @@
+ lue%22 as __String
++) %7C%7C getTypeOfPropertyOfType(nextResult, unicodeDic.Iterator.value as __String)
+ );%0D%0A            
+@@ -1826924,16 +1826924,62 @@
+ %22target%22
+-
++ && escapedText !== unicodeDic.MetaData.target
+ ) %7B%0D%0A   
+@@ -1827324,16 +1827324,60 @@
+ = %22meta%22
+-
++ && escapedText !== unicodeDic.MetaData.meta
+ ) %7B%0D%0A   

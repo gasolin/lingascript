@@ -190,7 +190,8 @@ namespace ts {
         },
         MetaData: {
             target: "目标",
-            length: "长度"
+            length: "长度",
+            meta: "元数据"
         },
         Lib: {
             Infinity: "无穷大_",

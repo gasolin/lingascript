@@ -1445,13 +1445,13 @@ namespace ts {
                     case SyntaxKind.GetAccessor:
                     case SyntaxKind.SetAccessor:
                     case SyntaxKind.FunctionDeclaration:
-                        if (meaning & SymbolFlags.Variable && name === "arguments") {
+                        if (meaning & SymbolFlags.Variable && (name === "arguments" || name === unicodeDic.Function.arguments)) {
                             result = argumentsSymbol;
                             break loop;
                         }
                         break;
                     case SyntaxKind.FunctionExpression:
-                        if (meaning & SymbolFlags.Variable && name === "arguments") {
+                        if (meaning & SymbolFlags.Variable && (name === "arguments" || name === unicodeDic.Function.arguments)) {
                             result = argumentsSymbol;
                             break loop;
                         }
@@ -1509,7 +1509,7 @@ namespace ts {
             if (!result) {
                 if (lastLocation) {
                     Debug.assert(lastLocation.kind === SyntaxKind.SourceFile);
-                    if ((lastLocation as SourceFile).commonJsModuleIndicator && name === "exports" && meaning & lastLocation.symbol.flags) {
+                    if ((lastLocation as SourceFile).commonJsModuleIndicator && (name === "exports" || name === unicodeDic.JavaScript.exports) && meaning & lastLocation.symbol.flags) {
                         return lastLocation.symbol;
                     }
                 }
@@ -1730,7 +1730,7 @@ namespace ts {
                 }
                 const symbol = resolveSymbol(resolveName(errorLocation, name, SymbolFlags.Type & ~SymbolFlags.Value, /*nameNotFoundMessage*/undefined, /*nameArg*/ undefined, /*isUse*/ false));
                 if (symbol && !(symbol.flags & SymbolFlags.NamespaceModule)) {
-                    const message = (name === "Promise" || name === "Symbol")
+                    const message = (name === "Promise" || name === "Symbol" || name === unicodeDic.Promise.Promise || name === unicodeDic.Symbol.Symbol)
                         ? Diagnostics._0_only_refers_to_a_type_but_is_being_used_as_a_value_here_Do_you_need_to_change_your_target_library_Try_changing_the_lib_compiler_option_to_es2015_or_later
                         : Diagnostics._0_only_refers_to_a_type_but_is_being_used_as_a_value_here;
                     error(errorLocation, message, unescapeLeadingUnderscores(name));
@@ -8140,7 +8140,7 @@ namespace ts {
                 if (!node) return false;
                 switch (node.kind) {
                     case SyntaxKind.Identifier:
-                        return (<Identifier>node).escapedText === "arguments" && isExpressionNode(node);
+                        return ((<Identifier>node).escapedText === "arguments" || (<Identifier>node).escapedText === unicodeDic.Function.arguments) && isExpressionNode(node);
 
                     case SyntaxKind.PropertyDeclaration:
                     case SyntaxKind.MethodDeclaration:
@@ -15135,7 +15135,7 @@ namespace ts {
             // check. This gives us a quicker out in the common case where an object type is not a function.
             const resolved = resolveStructuredTypeMembers(type);
             return !!(resolved.callSignatures.length || resolved.constructSignatures.length ||
-                resolved.members.get("bind" as __String) && isTypeSubtypeOf(type, globalFunctionType));
+                (resolved.members.get("bind" as __String) || resolved.members.get(unicodeDic.Function.bind as __String)) && isTypeSubtypeOf(type, globalFunctionType));
         }
 
         function getTypeFacts(type: Type): TypeFacts {
@@ -15573,6 +15573,7 @@ namespace ts {
             const parent = root.parent;
             const isLengthPushOrUnshift = parent.kind === SyntaxKind.PropertyAccessExpression && (
                 (<PropertyAccessExpression>parent).name.escapedText === "length" ||
+                (<PropertyAccessExpression>parent).name.escapedText === unicodeDic.Array.length ||
                 parent.parent.kind === SyntaxKind.CallExpression && isPushOrUnshiftIdentifier((<PropertyAccessExpression>parent).name));
             const isElementAssignment = parent.kind === SyntaxKind.ElementAccessExpression &&
                 (<ElementAccessExpression>parent).expression === root &&
@@ -16266,7 +16267,7 @@ namespace ts {
                 }
 
                 let targetType: Type | undefined;
-                const prototypeProperty = getPropertyOfType(rightType, "prototype" as __String);
+                const prototypeProperty = getPropertyOfType(rightType, "prototype" as __String) || getPropertyOfType(rightType, unicodeDic.Object.prototype as __String);
                 if (prototypeProperty) {
                     // Target type is type of the prototype property
                     const prototypePropertyType = getTypeOfSymbol(prototypeProperty);
@@ -21220,7 +21221,7 @@ namespace ts {
         function isSymbolOrSymbolForCall(node: Node) {
             if (!isCallExpression(node)) return false;
             let left = node.expression;
-            if (isPropertyAccessExpression(left) && left.name.escapedText === "for") {
+            if (isPropertyAccessExpression(left) && (left.name.escapedText === "for" || left.name.escapedText === unicodeDic.Symbol.for)) {
                 left = left.expression;
             }
             if (!isIdentifier(left) || left.escapedText !== "Symbol") {
@@ -22779,7 +22780,7 @@ namespace ts {
             }
 
             function isEvalNode(node: Expression) {
-                return node.kind === SyntaxKind.Identifier && (node as Identifier).escapedText === "eval";
+                return node.kind === SyntaxKind.Identifier && ((node as Identifier).escapedText === "eval" || (node as Identifier).escapedText === unicodeDic.Function.eval);
             }
 
             // Return true if there was no error, false if there was an error.
@@ -23622,6 +23623,11 @@ namespace ts {
                 if (isStatic && memberNameNode) {
                     const memberName = getPropertyNameForPropertyNameNode(memberNameNode);
                     switch (memberName) {
+                        case unicodeDic.Function.name:
+                        case unicodeDic.Function.length:
+                        case unicodeDic.Function.caller:
+                        case unicodeDic.Function.arguments:
+                        case unicodeDic.Object.prototype:
                         case "name":
                         case "length":
                         case "caller":
@@ -24647,7 +24653,9 @@ namespace ts {
                 const promiseConstructorSymbol = resolveEntityName(promiseConstructorName, SymbolFlags.Value, /*ignoreErrors*/ true);
                 const promiseConstructorType = promiseConstructorSymbol ? getTypeOfSymbol(promiseConstructorSymbol) : errorType;
                 if (promiseConstructorType === errorType) {
-                    if (promiseConstructorName.kind === SyntaxKind.Identifier && promiseConstructorName.escapedText === "Promise" && getTargetType(returnType) === getGlobalPromiseType(/*reportErrors*/ false)) {
+                    if (promiseConstructorName.kind === SyntaxKind.Identifier &&
+                        (promiseConstructorName.escapedText === "Promise" || promiseConstructorName.escapedText === unicodeDic.Promise.Promise) &&
+                        getTargetType(returnType) === getGlobalPromiseType(/*reportErrors*/ false)) {
                         error(returnTypeNode, Diagnostics.An_async_function_or_method_in_ES5_SlashES3_requires_the_Promise_constructor_Make_sure_you_have_a_declaration_for_the_Promise_constructor_or_include_ES2015_in_your_lib_option);
                     }
                     else {
@@ -25466,7 +25474,8 @@ namespace ts {
                 return;
             }
 
-            if (!needCollisionCheckForIdentifier(node, name, "require") && !needCollisionCheckForIdentifier(node, name, "exports")) {
+            if (!needCollisionCheckForIdentifier(node, name, "require") && !needCollisionCheckForIdentifier(node, name, "exports")
+                && !needCollisionCheckForIdentifier(node, name, unicodeDic.Keywords.require) && !needCollisionCheckForIdentifier(node, name, unicodeDic.JavaScript.exports)) {
                 return;
             }
 
@@ -26280,7 +26289,8 @@ namespace ts {
             }
 
             // Both async and non-async iterators must have a `next` method.
-            const nextMethod = getTypeOfPropertyOfType(type, "next" as __String);
+            const nextMethod = getTypeOfPropertyOfType(type, "next" as __String) ||
+                getTypeOfPropertyOfType(type, unicodeDic.Iterator.next as __String);
             if (isTypeAny(nextMethod)) {
                 return undefined;
             }
@@ -26308,7 +26318,7 @@ namespace ts {
                 }
             }
 
-            const nextValue = nextResult && getTypeOfPropertyOfType(nextResult, "value" as __String);
+            const nextValue = nextResult && (getTypeOfPropertyOfType(nextResult, "value" as __String) || getTypeOfPropertyOfType(nextResult, unicodeDic.Iterator.value as __String));
             if (!nextValue) {
                 if (errorNode) {
                     error(errorNode, isAsyncIterator
@@ -30985,12 +30995,12 @@ namespace ts {
             const escapedText = node.name.escapedText;
             switch (node.keywordToken) {
                 case SyntaxKind.NewKeyword:
-                    if (escapedText !== "target") {
+                    if (escapedText !== "target" && escapedText !== unicodeDic.MetaData.target) {
                         return grammarErrorOnNode(node.name, Diagnostics._0_is_not_a_valid_meta_property_for_keyword_1_Did_you_mean_2, node.name.escapedText, tokenToString(node.keywordToken), "target");
                     }
                     break;
                 case SyntaxKind.ImportKeyword:
-                    if (escapedText !== "meta") {
+                    if (escapedText !== "meta" && escapedText !== unicodeDic.MetaData.meta) {
                         return grammarErrorOnNode(node.name, Diagnostics._0_is_not_a_valid_meta_property_for_keyword_1_Did_you_mean_2, node.name.escapedText, tokenToString(node.keywordToken), "meta");
                     }
                     break;

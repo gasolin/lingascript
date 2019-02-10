@@ -1,0 +1,68 @@
+@@ -87850,16 +87850,74 @@
+ ototype%22
+-
++ %7C%7C node.arguments%5B1%5D.text === unicodeDic.Object.prototype
+ );%0D%0A    
+@@ -92272,32 +92272,342 @@
+ as __String %7C%7C%0D%0A
++                    initializer.expression.escapedText === unicodeDic.JavaScript.window as __String %7C%7C%0D%0A                    initializer.expression.escapedText === unicodeDic.JavaScript.self as __String %7C%7C%0D%0A                    initializer.expression.escapedText === unicodeDic.JavaScript.global as __String %7C%7C%0D%0A
+                 
+@@ -93349,24 +93349,25 @@
+ er(node) && 
++(
+ node.escaped
+@@ -93376,32 +93376,87 @@
+ xt === %22exports%22
++ %7C%7C node.escapedText === unicodeDic.JavaScript.exports)
+ ;%0D%0A    %7D%0D%0A%0D%0A    
+@@ -93605,25 +93605,37 @@
+ pression) &&
++%0D%0A
+  
++         (
+ node.express
+@@ -93663,19 +93663,94 @@
+ module%22 
++%7C%7C node.expression.escapedText === unicodeDic.Keywords.module) 
+ &&
++%0D%0A   
+  
++      (
+ node.nam
+@@ -93776,16 +93776,76 @@
+ exports%22
++ %7C%7C node.name.escapedText === unicodeDic.JavaScript.exports)
+ ;%0D%0A    %7D
+@@ -95508,16 +95508,17 @@
+ ame) && 
++(
+ entityNa
+@@ -95548,24 +95548,88 @@
+  %22prototype%22
++ %7C%7C entityName.name.escapedText === unicodeDic.Object.prototype)
+  && isEntity
+@@ -97537,16 +97537,234 @@
+ exports%22
+-
++ %7C%7C%0D%0A                id.escapedText === unicodeDic.JavaScript.exports %7C%7C%0D%0A                id.escapedText === unicodeDic.Keywords.module && nextToLast.name.escapedText === unicodeDic.JavaScript.exports%0D%0A                
+ ) %7B%0D%0A   
+@@ -131460,32 +131460,33 @@
+ .Identifier && (
++(
+ %3CIdentifier%3Enode
+@@ -131511,16 +131511,79 @@
+ %22Symbol%22
++ %7C%7C(%3CIdentifier%3Enode).escapedText === unicodeDic.Symbol.Symbol)
+ ;%0D%0A    %7D
+@@ -131729,16 +131729,122 @@
+ unshift%22
++ %7C%7C%0D%0A          node.escapedText === unicodeDic.Array.push %7C%7C node.escapedText === unicodeDic.Array.unshift
+ ;%0D%0A    %7D
+@@ -184172,32 +184172,33 @@
+ ession(node) && 
++(
+ node.name.escape
+@@ -184218,16 +184218,74 @@
+ ototype%22
++ %7C%7C node.name.escapedText === unicodeDic.Object.prototype)
+ ;%0D%0A    %7D
