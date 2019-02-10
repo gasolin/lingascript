@@ -2,6 +2,8 @@ var fc = require('filecompare');
 const fs = require('fs');
 const path = require("path");
 
+const TARGET_LANG = 'cn'
+
 function getPath(filePath) {
   return path.resolve(filePath)
 }
@@ -20,6 +22,6 @@ console.log('\n\ncheck EN outputs...')
 let enOutput = getPath('examples/en/built/basic.js')
 fc(enOutput,sample,cb);
 
-console.log('\n\ncheck CN outputs...')
-let cnOutput = getPath('examples/cn/built/basic.js')
-fc(cnOutput,sample,cb);
+console.log(`\n\ncheck ${TARGET_LANG.toUpperCase()} outputs...`)
+let targetOutput = getPath(`examples/${TARGET_LANG}/built/basic.js`)
+fc(targetOutput,sample,cb);

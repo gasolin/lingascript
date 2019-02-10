@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
-    "file-patch": "^0.2.1",
+    "file-patch": "^0.3.0",
     "filecompare": "^1.0.4"
   },
   "devDependencies": {},
@@ -16,11 +16,13 @@
     "clean": "rm -Rf typescript && npm run update-ts",
     "prebuild": "npm run patch",
     "build:cn": "cp src/cn/language.ts typescript/src/compiler/language.ts && npm run build",
-    "build:tw": "echo 'Traditional Chinese build is not supported yet'",
+    "build:tw": "cp src/tw/language.ts typescript/src/compiler/language.ts && npm run build",
+    "build:lang": "echo 'Target Language build is not supported yet'",
     "build:ts": "cd typescript && npm install && jake clean && jake local",
     "build": "npm run build:ts",
     "pretest:en": "node typescript/built/local/tsc.js -p examples/en",
     "pretest:cn": "node typescript/built/local/tsc.js -p examples/cn",
+    "pretest:tw": "node typescript/built/local/tsc.js -p examples/tw",
     "test": "npm run pretest:en && npm run pretest:cn && node tests/test.js",
     "update-ts": "git submodule update --init --recursive",
     "upgrade-ts": "rm -Rf typescript && git submodule update --remote",

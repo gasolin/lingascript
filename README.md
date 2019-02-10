@@ -9,14 +9,11 @@ LingaScript is derived from Typescript and Javascript. LingaScript can be compil
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
 
 
-## Support Languages
+## Current Support Languages
 
+- English (en, derived from TypeScript)
 - Simplified Chinese (cn)
-
-Plan to support:
-
 - Traditional Chinese (tw)
-
 
 ## Usage
 
@@ -78,6 +75,25 @@ The `npm run build:cn` will do
 
 3. Run `npm run test` to make sure the built tool works.
 
+### Test different language
+
+To test Traditional Chinese, Run command:
+
+```sh
+$ npm run clean
+$ npm run build:tw
+```
+
+change `pretest:cn` to `pretest:tw` in `package.json`'s `scripts` section.
+
+and change `TARGET_LANG = 'cn'` to `TARGET_LANG = 'tw'` in `tests/test.js`.
+
+Then run the right test set
+
+```
+npm run test
+```
+
 ### Rebuild from a clean typescript/ folder
 
 You need to remove typescript for a clean patch. To re-build from the clean typescript, you can run
@@ -120,6 +136,7 @@ $ git checkout v3.4.0
 $ cd ..
 $ git add typescript
 ```
+
 
 ## License
 
