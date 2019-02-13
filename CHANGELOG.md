@@ -6,3 +6,4 @@
   - Traditional Chinese
 - patch typescript through npm scripts and file-patch
 - Basic tests passed
+- (Native) Language specific readme
