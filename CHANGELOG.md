@@ -1,6 +1,7 @@
 # 0.-.- In Porgress
 
 - Update issue templates
+- Add npm badges for support language packages
 
 # 0.1.1 (2019/2/13) Initial Release
 
