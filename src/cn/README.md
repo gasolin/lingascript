@@ -1,6 +1,6 @@
 # LingaScript-cn
 
-LingaScript-cn 是支援簡體中文關鍵字的 TypeScript 編譯器。語法衍生自 Typescript (和 Javascript)。
+LingaScript-cn 是支援簡體中文關鍵字的 TypeScript 編譯器。語法衍生自 TypeScript (和 Javascript)。
 
 LingaScript-cn 可以將以簡體中文撰寫的腳本編譯成 Javascript，可在任意支援Javascript的環境中執行。
 
@@ -25,7 +25,7 @@ LingaScript-cn 支援簡體中文與英文關鍵字（Keywords），要支援別
 npm install -g lingascript-cn
 ```
 
-安裝後可得到`tsc`命令. (和`Typescript`相同)
+安裝後可得到`tsc`命令. (和`TypeScript`相同)
 
 建立`測試.ts`檔案如下
 
@@ -33,7 +33,7 @@ npm install -g lingascript-cn
 變量 一切都是 = 假的;
 ```
 
-或加上Typescript宣告
+或加上 TypeScript 宣告
 
 ```js
 變量 一切都是:真假 = 假的;
@@ -50,7 +50,7 @@ tsc 測試.ts
 var 一切都是 = false;
 ```
 
-LingaScript 支援所有TypeScript編譯器的命令，所以也可以用如下指令
+LingaScript 支援所有 TypeScript 編譯器的命令，所以也可以用如下指令
 
 ```
 tsc examples/tw/src/測試.ts --outFile test.js

@@ -4,7 +4,7 @@
 
 LingaScript is the TypeScript with [native language] support, which support write code with [native language] keywords.
 
-Basically LingaScript is derived from Typescript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
+Basically LingaScript is derived from TypeScript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
 
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support. [Check out the LingaScript repo](https://github.com/gasolin/lingascript/).
 
@@ -13,7 +13,7 @@ Basically LingaScript is derived from Typescript (and Javascript). LingaScript c
 
 LingaScript-[lang] support [native language] and english keywords（Keywords），you need install different package when using different native language.
 
-- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: Typescript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
+- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: TypeScript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
 - 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn))
 - 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: [lingascript-tw](https://www.npmjs.com/package/lingascript-tw))
 
@@ -25,7 +25,7 @@ Install LingaScript via command
 npm install -g lingascript-[lang]
 ```
 
-Then you get the `tsc` command. (same as  `Typescript`)
+Then you get the `tsc` command. (same as  `TypeScript`)
 
 Create `test.ts` file.
 

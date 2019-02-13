@@ -4,7 +4,7 @@
 
 LingaScript is the TypeScript with multilingal support, which support write code with non-English languages.
 
-Basically LingaScript is derived from Typescript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
+Basically LingaScript is derived from TypeScript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
 
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
 
@@ -58,18 +58,18 @@ You can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/
 
 ## Develop
 
-LingaScript use `file-patch` to patch Typescript's compiler.
+LingaScript use `file-patch` to patch TypeScript's compiler.
 
-Check [Typescript Build Instruction](https://github.com/Microsoft/TypeScript#building) for more detail about building Typescript.
+Check [TypeScript Build Instruction](https://github.com/Microsoft/TypeScript#building) for more detail about building TypeScript.
 
 
 ### Normal Validation phase
 
 The `npm run build:cn` will do
 
-1. patch clean Typescript with .diff files in src/. The related scripts are stored in [scripts/](https://github.com/gasolin/lingascript/tree/master/scripts) folder.
+1. patch clean TypeScript with .diff files in src/. The related scripts are stored in [scripts/](https://github.com/gasolin/lingascript/tree/master/scripts) folder.
 
-2. `npm run build` will be used to build the patched Typescript
+2. `npm run build` will be used to build the patched TypeScript
 
 3. Run `npm run test:cn` to make sure the built tool works.
 
@@ -85,7 +85,7 @@ $ npm run test:tw
 
 ### Rebuild from a clean typescript/ folder
 
-You need to remove Typescript for a clean patch. To re-build from the clean Typescript, you can run
+You need to remove TypeScript for a clean patch. To re-build from the clean TypeScript, you can run
 
 ```sh
 $ npm run clean
@@ -114,9 +114,9 @@ npm run diff
 
 Edit [scripts/diff.sh](https://github.com/gasolin/lingascript/tree/master/scripts) to include the new modified files.
 
-### Upgrade Typescript Version
+### Upgrade TypeScript Version
 
-To upgrade the Typescript's version (to v3.4.0 for example):
+To upgrade the TypeScript's version (to v3.4.0 for example):
 
 ```sh
 $ npm run upgrade-ts
@@ -125,6 +125,8 @@ $ git checkout v3.4.0
 $ cd ..
 $ git add typescript
 ```
+
+The TypeScript version follows https://github.com/Microsoft/TypeScript/releases
 
 ### Build faster
 
