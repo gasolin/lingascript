@@ -26,7 +26,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Platform (please complete the following information):**
  - OS: [e.g. OSX]
- - Version [e.g. LingaScript 0.1.1]
+ - Package [e.g. lingascript-tw]
+ - Version [e.g. v0.1.1]
 
 **Additional context**
 Add any other context about the problem here.

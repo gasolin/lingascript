@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
+**Related Package (please complete the following information):**
+ - Package [e.g. lingascript-tw]
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
