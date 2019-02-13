@@ -69,31 +69,16 @@ The `npm run build:cn` will do
 
 2. `npm run build` will be used to build the patched Typescript
 
-3. Run `npm run test` to make sure the built tool works.
+3. Run `npm run test:cn` to make sure the built tool works.
 
-### Test different language
+### Test different languages
 
-To test Traditional Chinese, Run command:
+For example, to test Traditional Chinese, you can run commands:
 
 ```sh
 $ npm run clean
 $ npm run build:tw
-```
-
-change `test` script in `package.json`'s `scripts` section.
-
-from
-
-`npm run pretest:en && npm run pretest:cn && node tests/test.js cn`
-
-to
-
-`npm run pretest:en && npm run pretest:tw && node tests/test.js tw`
-
-Then run the right test set
-
-```
-npm run test
+$ npm run test:tw
 ```
 
 ### Rebuild from a clean typescript/ folder
