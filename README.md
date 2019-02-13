@@ -2,9 +2,9 @@
 
 **This project is in early alpha stage, please use it at your own risk**
 
-LingaScript is a multilingal programming language, which support write code with non-English languages.
+LingaScript is the TypeScript with multilingal support, which support write code with non-English languages.
 
-LingaScript is derived from Typescript and Javascript. LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
+Basically LingaScript is derived from Typescript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
 
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support.
 
@@ -56,15 +56,18 @@ You can config the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/
 
 ## Develop
 
-lingascript use `file-patch` to patch typescript's compiler.
+LingaScript use `file-patch` to patch Typescript's compiler.
+
+Check [Typescript Build Instruction](https://github.com/Microsoft/TypeScript#building) for more detail about building Typescript.
+
 
 ### Normal Validation phase
 
 The `npm run build:cn` will do
 
-1. patch clean typescript with .diff files in src/. The related scripts are stored in [scripts/](https://github.com/gasolin/lingascript/tree/master/scripts) folder. 
+1. patch clean Typescript with .diff files in src/. The related scripts are stored in [scripts/](https://github.com/gasolin/lingascript/tree/master/scripts) folder.
 
-2. `npm run build` will be used to build the patched typescript
+2. `npm run build` will be used to build the patched Typescript
 
 3. Run `npm run test` to make sure the built tool works.
 
@@ -77,9 +80,15 @@ $ npm run clean
 $ npm run build:tw
 ```
 
-change `pretest:cn` to `pretest:tw` in `package.json`'s `scripts` section.
+change `test` script in `package.json`'s `scripts` section.
 
-and change `TARGET_LANG = 'cn'` to `TARGET_LANG = 'tw'` in `tests/test.js`.
+from
+
+`npm run pretest:en && npm run pretest:cn && node tests/test.js cn`
+
+to
+
+`npm run pretest:en && npm run pretest:tw && node tests/test.js tw`
 
 Then run the right test set
 
@@ -89,7 +98,7 @@ npm run test
 
 ### Rebuild from a clean typescript/ folder
 
-You need to remove typescript for a clean patch. To re-build from the clean typescript, you can run
+You need to remove Typescript for a clean patch. To re-build from the clean Typescript, you can run
 
 ```sh
 $ npm run clean
@@ -120,7 +129,7 @@ Edit [scripts/diff.sh](https://github.com/gasolin/lingascript/tree/master/script
 
 ### Upgrade Typescript Version
 
-To upgrade the typescript's version (to v3.4.0 for example):
+To upgrade the Typescript's version (to v3.4.0 for example):
 
 ```sh
 $ npm run upgrade-ts

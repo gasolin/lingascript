@@ -1,8 +1,14 @@
+#!/usr/bin/env node
+'use strict'
+
 var fc = require('filecompare');
-const fs = require('fs');
 const path = require("path");
 
-const TARGET_LANG = 'cn'
+let targetLang = 'cn'
+let [,,...args] = process.argv
+if (args[0]) {
+  targetLang = args[0]
+}
 
 function getPath(filePath) {
   return path.resolve(filePath)
@@ -22,6 +28,6 @@ console.log('\n\ncheck EN outputs...')
 let enOutput = getPath('examples/en/built/basic.js')
 fc(enOutput,sample,cb);
 
-console.log(`\n\ncheck ${TARGET_LANG.toUpperCase()} outputs...`)
-let targetOutput = getPath(`examples/${TARGET_LANG}/built/basic.js`)
+console.log(`\n\ncheck ${targetLang.toUpperCase()} outputs...`)
+let targetOutput = getPath(`examples/${targetLang}/built/basic.js`)
 fc(targetOutput,sample,cb);
