@@ -12,7 +12,7 @@ LingaScript-cn 可以將以簡體中文撰寫的腳本編譯成 Javascript，可
 
 LingaScript-cn 支援簡體中文與英文關鍵字（Keywords），要支援別的語言需分別安裝不同套件。
 
-- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: [Typescript](https://www.npmjs.com/package/typescript)))
+- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: Typescript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
 - 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn))
 - 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: [lingascript-tw](https://www.npmjs.com/package/lingascript-tw))
 
