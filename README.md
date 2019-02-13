@@ -133,7 +133,7 @@ Modify the `build:ts` script in `package.json`'s `scripts` section. Replace `jak
 
 ## Changelog
 
-See https://github.com/gasolin/lingascript/blob/master/CHANGELOG.md
+Check [CHANGELOG](https://github.com/gasolin/lingascript/blob/master/CHANGELOG.md) for more detail.
 
 
 ## License

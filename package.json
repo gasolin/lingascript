@@ -1,6 +1,6 @@
 {
   "name": "lingascript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typescript with non-English languages",
   "main": "index.js",
   "directories": {

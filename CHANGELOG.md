@@ -1,9 +1,13 @@
-# 0.1.1 initial release
+# 0.-.- In Porgress
 
-- Based on typescript v3.3.1
+- Update issue templates
+
+# 0.1.1 (2019/2/13) Initial Release
+
+- Based on TypeScript v3.3.1
 - Support languages:
-  - Simplified Chinese
-  - Traditional Chinese
-- patch typescript through npm scripts and file-patch
+  - Simplified Chinese (no npm package yet, see #11)
+  - Traditional Chinese (`lingascript-tw`)
+- patch TypeScript through npm scripts and file-patch
 - Basic tests passed
 - (Native) Language specific readme
