@@ -1,4 +1,4 @@
-# 0.1 initial release (in progress)
+# 0.1.1 initial release
 
 - Based on typescript v3.3.1
 - Support languages:

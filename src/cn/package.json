@@ -2,7 +2,7 @@
     "name": "lingascript",
     "author": "Fred Lin",
     "homepage": "https://github.com/gasolin/lingascript",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "Apache-2.0",
     "description": "LingaScript is TypeScript that support Simplified Chinese keywords",
     "keywords": [
