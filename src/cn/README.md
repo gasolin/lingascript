@@ -1,23 +1,23 @@
 # LingaScript-cn
 
-LingaScript-cn 是支援簡體中文關鍵字的 TypeScript 編譯器。語法衍生自 TypeScript (和 Javascript)。
+LingaScript-cn 是支持简体中文关键字的 TypeScript 编译器。语法衍生自 TypeScript (和 Javascript)。
 
-LingaScript-cn 可以將以簡體中文撰寫的腳本編譯成 Javascript，可在任意支援Javascript的環境中執行。
+LingaScript-cn 可以将以简体中文撰写的脚本编译成 Javascript，可在任意支持Javascript的环境中执行。
 
-歡迎探索[非英語程式語言](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) 的朋友一同參與，我們可以透過改進共用的核心，來提供更好用的非英語程式語言工具。具體請查看[LingaScript專案網站](https://github.com/gasolin/lingascript/)
+欢迎探索[非英语编程语言](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) 的朋友一同参与，我们可以通过改进共用的核心，來提供更好用的非英语编程语言工具。具体请查看[LingaScript源码库](https://github.com/gasolin/lingascript/)
 
 [Non-english programming](https://en.wikipedia.org/wiki/Non-English-based_programming_languages) adventurers can easily add your local language, work together to improve the same core, and get benifit for the shared programming tools with better local language support. [Check out the LingaScript repo](https://github.com/gasolin/lingascript/).
 
-## 支援的本地語言
+## 支持的本地语言
 
-LingaScript-cn 支援簡體中文與英文關鍵字（Keywords），要支援別的語言需分別安裝不同套件。
+LingaScript-cn 支持简体中文与英文关键字（Keywords），要支持別的语言需分別安裝不同套件。
 
 - English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: Typescript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
-- 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn))
+- 简体中文 (Simplified Chinese, cn, [支持的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn))
 - 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: [lingascript-tw](https://www.npmjs.com/package/lingascript-tw))
 
 
-## 使用說明
+## 使用说明
 
 可使用npm命令安裝 LingaScript：
 
@@ -25,53 +25,53 @@ LingaScript-cn 支援簡體中文與英文關鍵字（Keywords），要支援別
 npm install -g lingascript-cn
 ```
 
-安裝後可得到`tsc`命令. (和`TypeScript`相同)
+安裝后可得到`tsc`命令. (和`TypeScript`相同)
 
-建立`測試.ts`檔案如下
-
-```js
-變量 一切都是 = 假的;
-```
-
-或加上 TypeScript 宣告
+建立`测试.ts`文件如下
 
 ```js
-變量 一切都是:真假 = 假的;
+变量 一切 = 假的;
 ```
 
-然後使用以下命令編譯
-```
-tsc 測試.ts
-```
-
-則會輸出`測試.js`
+或加上 TypeScript 声明
 
 ```js
-var 一切都是 = false;
+变量 一切:真假 = 假的;
 ```
 
-LingaScript 支援所有 TypeScript 編譯器的命令，所以也可以用如下指令
+然后使用以下命令编译
+```
+tsc 测试.ts
+```
+
+则会输出`测试.js`
+
+```js
+var 一切 = false;
+```
+
+LingaScript 支持所有 TypeScript 编译器的命令，所以也可以用如下指令
 
 ```
-tsc examples/tw/src/測試.ts --outFile test.js
+tsc examples/tw/src/测试.ts --outFile test.js
 ```
 
-將`測試.ts`輸出成`test.js`。
+将`测试.ts`输出成`test.js`。
 
 
-更多範例可參考 https://github.com/gasolin/lingascript/tree/master/examples/cn .
+更多范例可参考 https://github.com/gasolin/lingascript/tree/master/examples/cn .
 
 
-## 安裝到專案中 (而非安裝到全域)
+## 本地安裝 (而非全局安裝)
 
-先建立專案資料夾，並安裝 lingascript-cn
+先创建源码文件夹，并安裝 lingascript-cn
 
 ```
 $ mkdir demo && cd demo && npm init
 $ npm install lingascript-cn
 ```
 
-編輯`package.json`加入以下設定
+编辑`package.json`加入以下设置
 
 ```json
 scripts: {
@@ -82,14 +82,14 @@ scripts: {
 },
 ```
 
-即可在專案中使用中文關鍵字開發程式。
+即可在源码中使用中文关键字开发程序。
 
 
-## 版本歷程
+## 版本历程
 
 查看 https://github.com/gasolin/lingascript/blob/master/CHANGELOG.md
 
 
-## 授權
+## 授权
 
 Apache-2.0 License
