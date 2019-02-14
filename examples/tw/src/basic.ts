@@ -1,7 +1,7 @@
 // https://www.typescriptlang.org/docs/handbook/basic-types.html
 
 // Boolean
-變量 isDone: boolean = 假的;
+變數 isDone: boolean = 假的;
 
 // Number
 let decimal: number = 6;
