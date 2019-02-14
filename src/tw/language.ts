@@ -75,7 +75,7 @@ namespace ts {
             while: "每當",
             with: "外擴",
             yield: "產生",
-            async: "異步",
+            async: "非同步",
             await: "等待",
             of: "之於"
         },

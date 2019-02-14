@@ -14,9 +14,10 @@
 
 Keywords change:
 - lingascript-tw 
-  - let 變量 -> 變數
+  - let 變量 -> 變數 #13
   - const 常量 -> 常數
   - var 全域變量 -> 全域變數
+  - async 異步 -> 非同步 #14
 
 # 0.1.1 (2019/2/13) Initial Release
 
