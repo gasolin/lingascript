@@ -53,7 +53,7 @@ var 一切 = false;
 LingaScript 支持所有 TypeScript 编译器的命令，所以也可以用如下指令
 
 ```
-tsc examples/tw/src/测试.ts --outFile test.js
+tsc examples/cn/src/测试.ts --outFile test.js
 ```
 
 将`测试.ts`输出成`test.js`。

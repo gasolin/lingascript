@@ -1,5 +1,8 @@
 # 0.-.- In Porgress
 
+
+# 0.2.0 (2019/2/14)
+
 - Based on TypeScript v3.3.1
 - Support languages:
   - Simplified Chinese (`lingascript-cn`)
