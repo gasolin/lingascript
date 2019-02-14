@@ -91,7 +91,7 @@ listAny[1] = 100;
 
 // Never
 // Function returning never must have unreachable end point
-函数 error(message: 文字): 永不 {
+函数 error(message: 文字): 不及 {
   丢出 new Error(message);
 }
 
