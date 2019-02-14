@@ -1,7 +1,23 @@
 # 0.-.- In Porgress
 
+
+# 0.2.0 (2019/2/14)
+
+- Based on TypeScript v3.3.1
+- Support languages:
+  - Simplified Chinese (`lingascript-cn`)
+  - Traditional Chinese (`lingascript-tw`)
+
 - Update issue templates
 - Add npm badges for support language packages
+- Add Simplified Chinese Readme #11, thanks @nobodxbodon
+
+Keywords change:
+- lingascript-tw 
+  - let 變量 -> 變數 #13
+  - const 常量 -> 常數
+  - var 全域變量 -> 全域變數
+  - async 異步 -> 非同步 #14
 
 # 0.1.1 (2019/2/13) Initial Release
 
@@ -9,6 +25,7 @@
 - Support languages:
   - Simplified Chinese (no npm package yet, see #11)
   - Traditional Chinese (`lingascript-tw`)
+
 - patch TypeScript through npm scripts and file-patch
 - Basic tests passed
 - (Native) Language specific readme
