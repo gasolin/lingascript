@@ -71,18 +71,18 @@ $ mkdir demo && cd demo && npm init
 $ npm install lingascript-cn
 ```
 
-编辑`package.json`加入以下设置
+编辑`package.json`加入以下设置，并更新 lingascript-cn 版本号
 
 ```json
-scripts: {
-  "compile": "./node_modules/bin/tsc test.ts"
+"scripts": {
+  "compile": "./node_modules/lingascript-cn/bin/tsc 测试.ts"
 },
 "devDependencies": {
-  "lingascript-cn": "^0.1.0",
+  "lingascript-cn": "^0.2.0",
 },
 ```
 
-即可在源码中使用中文关键字开发程序。
+即可在源码中使用中文关键字开发程序，使用`npm run compile`进行编译。
 
 
 ## 版本历程
