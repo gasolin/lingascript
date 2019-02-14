@@ -13,9 +13,10 @@ Basically LingaScript is derived from TypeScript (and Javascript). LingaScript c
 
 LingaScript-[lang] support [native language] and english keywords（Keywords），you need install different package when using different native language.
 
-- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: TypeScript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
-- 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn))
-- 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: [lingascript-tw](https://www.npmjs.com/package/lingascript-tw))
+- English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: Typescript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
+- 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: lingascript-cn [![npm version](https://img.shields.io/npm/v/lingascript-cn.svg)](https://www.npmjs.com/package/lingascript-cn))
+- 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: lingascript-tw [![npm version](https://img.shields.io/npm/v/lingascript-tw.svg)](https://www.npmjs.com/package/lingascript-tw))
+
 
 ## Usage
 
@@ -71,6 +72,12 @@ scripts: {
   "lingascript-[lang]": "^3.3.1",
 },
 ```
+
+
+## Changelog
+
+Check [CHANGELOG](https://github.com/gasolin/lingascript/blob/master/CHANGELOG.md) for more detail.
+
 
 ## License
 
