@@ -1509,7 +1509,7 @@ namespace ts {
             if (!result) {
                 if (lastLocation) {
                     Debug.assert(lastLocation.kind === SyntaxKind.SourceFile);
-                    if ((lastLocation as SourceFile).commonJsModuleIndicator && (name === "exports" || name === unicodeDic.JavaScript.exports) && meaning & lastLocation.symbol.flags) {
+                    if ((lastLocation as SourceFile).commonJsModuleIndicator && keywords.isJavaScriptExports(name) && meaning & lastLocation.symbol.flags) {
                         return lastLocation.symbol;
                     }
                 }
@@ -1730,7 +1730,7 @@ namespace ts {
                 }
                 const symbol = resolveSymbol(resolveName(errorLocation, name, SymbolFlags.Type & ~SymbolFlags.Value, /*nameNotFoundMessage*/undefined, /*nameArg*/ undefined, /*isUse*/ false));
                 if (symbol && !(symbol.flags & SymbolFlags.NamespaceModule)) {
-                    const message = (name === "Promise" || name === "Symbol" || name === unicodeDic.Promise.Promise || name === unicodeDic.Symbol.Symbol)
+                    const message = (keywords.isPromisePromise(name) || keywords.isSymbolSymbol(name))
                         ? Diagnostics._0_only_refers_to_a_type_but_is_being_used_as_a_value_here_Do_you_need_to_change_your_target_library_Try_changing_the_lib_compiler_option_to_es2015_or_later
                         : Diagnostics._0_only_refers_to_a_type_but_is_being_used_as_a_value_here;
                     error(errorLocation, message, unescapeLeadingUnderscores(name));
@@ -21221,10 +21221,10 @@ namespace ts {
         function isSymbolOrSymbolForCall(node: Node) {
             if (!isCallExpression(node)) return false;
             let left = node.expression;
-            if (isPropertyAccessExpression(left) && (left.name.escapedText === "for" || left.name.escapedText === unicodeDic.Symbol.for)) {
+            if (isPropertyAccessExpression(left) && keywords.isKeywordFor(left.name.escapedText)) {
                 left = left.expression;
             }
-            if (!isIdentifier(left) || left.escapedText !== "Symbol") {
+            if (!isIdentifier(left) || !keywords.isSymbolSymbol(left.escapedText)) {
                 return false;
             }
 
@@ -22780,7 +22780,7 @@ namespace ts {
             }
 
             function isEvalNode(node: Expression) {
-                return node.kind === SyntaxKind.Identifier && ((node as Identifier).escapedText === "eval" || (node as Identifier).escapedText === unicodeDic.Function.eval);
+                return node.kind === SyntaxKind.Identifier && keywords.isFunctionEval((node as Identifier).escapedText);
             }
 
             // Return true if there was no error, false if there was an error.
@@ -22823,7 +22823,7 @@ namespace ts {
                     // and the type of the non-compound operation to be assignable to the type of VarExpr.
 
                     if (checkReferenceExpression(left, Diagnostics.The_left_hand_side_of_an_assignment_expression_must_be_a_variable_or_a_property_access)
-                        && (!isIdentifier(left) || unescapeLeadingUnderscores(left.escapedText) !== "exports")) {
+                        && (!isIdentifier(left) || !keywords.isJavaScriptExports(unescapeLeadingUnderscores(left.escapedText) as __String))) {
                         // to avoid cascading errors check assignability only if 'isReference' check succeeded and no errors were reported
                         checkTypeAssignableToAndOptionallyElaborate(valueType, leftType, left, right);
                     }
@@ -24654,7 +24654,7 @@ namespace ts {
                 const promiseConstructorType = promiseConstructorSymbol ? getTypeOfSymbol(promiseConstructorSymbol) : errorType;
                 if (promiseConstructorType === errorType) {
                     if (promiseConstructorName.kind === SyntaxKind.Identifier &&
-                        (promiseConstructorName.escapedText === "Promise" || promiseConstructorName.escapedText === unicodeDic.Promise.Promise) &&
+                        keywords.isPromisePromise(promiseConstructorName.escapedText) &&
                         getTargetType(returnType) === getGlobalPromiseType(/*reportErrors*/ false)) {
                         error(returnTypeNode, Diagnostics.An_async_function_or_method_in_ES5_SlashES3_requires_the_Promise_constructor_Make_sure_you_have_a_declaration_for_the_Promise_constructor_or_include_ES2015_in_your_lib_option);
                     }

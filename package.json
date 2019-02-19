@@ -1,6 +1,6 @@
 {
   "name": "lingascript",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Typescript with non-English languages",
   "main": "index.js",
   "directories": {
@@ -14,7 +14,7 @@
   "scripts": {
     "install": "npm run update-ts",
     "clean": "rm -Rf typescript && npm run update-ts",
-    "prebuild": "npm run patch",
+    "prebuild": "npm run patch && cp src/common/compiler/keywords.ts typescript/src/compiler/keywords.ts",
     "build:cn": "cp src/cn/language.ts typescript/src/compiler/language.ts && cp src/cn/package.json typescript/package.json && npm run build && cp src/cn/README.md typescript/README.md",
     "build:tw": "cp src/tw/language.ts typescript/src/compiler/language.ts && cp src/tw/package.json typescript/package.json && npm run build && cp src/tw/README.md typescript/README.md",
     "build:lang": "echo 'Target Language build is not supported yet'",

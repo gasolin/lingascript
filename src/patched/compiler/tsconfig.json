@@ -8,6 +8,7 @@
 
     "files": [
         "language.ts",
+        "keywords.ts",
         "core.ts",
         "performance.ts",
         "semver.ts",
