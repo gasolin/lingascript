@@ -203,7 +203,7 @@ namespace ts {
             typeDefinitionDirSuffix: "@types-zh-cn"
         },
         Language: {
-            language: "zh-CN"
+            language: "zh-cn"
         },
         golbalType: {
             AsyncIterable: "异步可迭代_",

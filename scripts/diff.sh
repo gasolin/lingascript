@@ -18,3 +18,6 @@ cp typescript/src/compiler/types.ts.diff src/common/compiler/.
 
 node ./node_modules/.bin/file-diff typescript/src/compiler/utilities.ts src/patched/compiler/utilities.ts
 cp typescript/src/compiler/utilities.ts.diff src/common/compiler/.
+
+node ./node_modules/.bin/file-diff typescript/src/tsc/tsc.ts src/patched/tsc/tsc.ts
+cp typescript/src/tsc/tsc.ts.diff src/common/tsc/.

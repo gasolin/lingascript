@@ -18,3 +18,6 @@ node ./node_modules/.bin/filecompare src/patched/compiler/types.ts typescript/sr
 
 node ./node_modules/.bin/file-patch src/common/compiler/utilities.ts.diff typescript/src/compiler/utilities.ts
 node ./node_modules/.bin/filecompare src/patched/compiler/utilities.ts typescript/src/compiler/utilities.ts
+
+node ./node_modules/.bin/file-patch src/common/tsc/tsc.ts.diff typescript/src/tsc/tsc.ts
+node ./node_modules/.bin/filecompare src/patched/tsc/tsc.ts typescript/src/tsc/tsc.ts
