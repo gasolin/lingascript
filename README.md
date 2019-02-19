@@ -96,7 +96,7 @@ check the `clean` and `build:cn` script `package.json`'s `scripts` section for t
 
 ### Debugging phase
 
-1. You can disable patch process by removing the `prebuild` script in `package.json`'s `scripts` section.
+1. You can disable patch process by removing the `prebuild` script in `package.json`'s `scripts` section. If you plan to change default keywords, remove `cp src/[lang]/language.ts typescript/src/compiler/language.ts && ` from the `build:[lang]` script in `package.json`'s `scripts` section to avoid overwrite from `src/[lang]`.
 
 2. Follow Normal Validation phase, if the modifications works, we can backup the modified files from `typescript/src` to `src/` via
 

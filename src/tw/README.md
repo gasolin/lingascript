@@ -75,14 +75,14 @@ $ npm install lingascript-tw
 
 ```json
 scripts: {
-  "compile": "./node_modules/bin/tsc test.ts"
+  "compile": "./node_modules/lingascript-tw/bin/tsc 測試.ts"
 },
 "devDependencies": {
-  "lingascript-tw": "^0.1.0",
+  "lingascript-tw": "^0.2.0",
 },
 ```
 
-即可在專案中使用中文關鍵字開發程式。
+即可在專案中使用中文關鍵字開發程式，使用`npm run compile`命令進行編譯。
 
 
 ## 版本歷程
