@@ -1,5 +1,10 @@
 # 0.-.- In Porgress
 
+- Wrap keyword detector as functions #18
+
+Keywords change:
+- Traditional Chinese
+  - while 每當 -> 直到 #20
 
 # 0.2.0 (2019/2/14)
 
@@ -13,7 +18,7 @@
 - Add Simplified Chinese Readme #11, thanks @nobodxbodon
 
 Keywords change:
-- lingascript-tw 
+- Traditional Chinese
   - let 變量 -> 變數 #13
   - const 常量 -> 常數
   - var 全域變量 -> 全域變數

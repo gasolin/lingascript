@@ -102,7 +102,7 @@ function fail() {
 
 // Function returning never must have unreachable end point
 function infiniteLoop(): never {
-  while (true) {
+  直到 (真的) {
   }
 }
 

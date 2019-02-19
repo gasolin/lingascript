@@ -4,7 +4,7 @@
       "allowJs": true,
       "target": "es6",
       "diagnostics": true,
-      "locale": "zh-CN"
+      "locale": "zh-cn"
   },
   "include": [
       "./src/**/*"

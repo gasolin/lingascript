@@ -72,7 +72,7 @@ namespace ts {
             unknown: "未知",
             var: "全域變數",
             void: "空的",
-            while: "每當",
+            while: "直到",
             with: "外擴",
             yield: "產生",
             async: "非同步",
