@@ -5,6 +5,8 @@
 Keywords change:
 - Traditional Chinese
   - while 每當 -> 直到 #20
+- Simplified Chinese
+  - while 每当 -> 直到 #20
 
 # 0.2.0 (2019/2/14)
 

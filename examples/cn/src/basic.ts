@@ -102,7 +102,7 @@ listAny[1] = 100;
 
 // Function returning never must have unreachable end point
 函数 infiniteLoop(): never {
-  每当 (真的) {
+  直到 (真的) {
   }
 }
 
