@@ -1,6 +1,7 @@
 # 0.-.- In Porgress
 
 - Wrap keyword detector as functions #18
+- Show localized diagnostic message in command line tool by default #21
 - Document `tsc --locale` usage in readme
 
 Keywords change:
