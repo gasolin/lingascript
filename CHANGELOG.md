@@ -1,6 +1,7 @@
 # 0.-.- In Porgress
 
 - Wrap keyword detector as functions #18
+- Document `tsc --locale` usage in readme
 
 Keywords change:
 - Traditional Chinese
