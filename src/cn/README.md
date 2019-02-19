@@ -59,6 +59,12 @@ tsc examples/cn/src/测试.ts --outFile test.js
 
 将`测试.ts`输出成`test.js`。
 
+To show with locale diagnostic messages, pass the `--locale [lang]` param in `tsc`, ex:
+要显示中文的错误信息，可以在运行`tsc`命令时加上`--locale zh-tw`参数, 如:
+
+```sh
+tsc --locale zh-cn test.ts
+```
 
 更多范例可参考 https://github.com/gasolin/lingascript/tree/master/examples/cn .
 

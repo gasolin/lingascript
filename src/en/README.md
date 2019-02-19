@@ -52,6 +52,13 @@ to compile and get output `test.js`
 let isDone = false
 ```
 
+
+To show with locale diagnostic messages, pass the `--locale [lang]` param in `tsc`, ex:
+
+```sh
+tsc --locale zh-cn test.ts
+```
+
 More [native language] code examples in https://github.com/gasolin/lingascript/tree/master/examples/[lang] .
 
 

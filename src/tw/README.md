@@ -59,6 +59,12 @@ tsc examples/tw/src/測試.ts --outFile test.js
 將`測試.ts`輸出成`test.js`。
 
 
+要顯示中文的錯誤訊息，可以在執行`tsc`命令時加上`--locale zh-tw`參數, 如:
+
+```sh
+tsc --locale zh-tw test.ts
+```
+
 更多範例可參考 https://github.com/gasolin/lingascript/tree/master/examples/tw .
 
 

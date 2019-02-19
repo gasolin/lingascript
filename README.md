@@ -17,7 +17,51 @@ You can find available built version with lingascript-[lang] [in npm](https://ww
 - 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: lingascript-cn [![npm version](https://img.shields.io/npm/v/lingascript-cn.svg)](https://www.npmjs.com/package/lingascript-cn))
 - 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: lingascript-tw [![npm version](https://img.shields.io/npm/v/lingascript-tw.svg)](https://www.npmjs.com/package/lingascript-tw))
 
+
 ## Usage
+
+Install LingaScript via command
+
+```
+npm install -g lingascript-[lang]
+```
+
+Then you get the `tsc` command. (same as  `TypeScript`)
+
+Create `test.ts` file.
+
+```js
+let isDone = false
+```
+
+or you can use TypeScript-style type check format:
+
+```js
+let isDone:boolean = false
+```
+
+Then run command
+
+```sh
+tsc test.ts
+```
+
+to compile and get output `test.js`
+
+```js
+let isDone = false
+```
+
+To show with locale diagnostic messages, pass the `--locale [lang]` param in `tsc`, ex:
+
+```sh
+tsc --locale zh-cn test.ts
+```
+
+More [native language] code examples in https://github.com/gasolin/lingascript/tree/master/examples/[lang] .
+
+
+## Build
 
 ```sh
 $ git clone https://github.com/gasolin/lingascript.git
