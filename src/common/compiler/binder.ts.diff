@@ -1,8 +1,8 @@
-@@ -99118,16 +99118,134 @@
+@@ -99386,16 +99386,134 @@
  guments%22
 + %7C%7C%0D%0A              node.escapedText === unicodeDic.Function.eval %7C%7C node.escapedText === unicodeDic.Function.arguments
  );%0D%0A    
-@@ -110481,16 +110481,141 @@
+@@ -110749,16 +110749,141 @@
  strict'%22
 + %7C%7C%0D%0A            nodeText === %60%22$%7BunicodeDic.JavaScript.use_strict%7D%22%60 %7C%7C nodeText === %60'$%7BunicodeDic.JavaScript.use_strict%7D'%60
  ;%0D%0A     
