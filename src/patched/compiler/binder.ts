@@ -1869,8 +1869,7 @@ namespace ts {
         }
 
         function isEvalOrArgumentsIdentifier(node: Node): boolean {
-            return isIdentifier(node) && (node.escapedText === "eval" || node.escapedText === "arguments" ||
-              node.escapedText === unicodeDic.Function.eval || node.escapedText === unicodeDic.Function.arguments);
+            return isIdentifier(node) && (keywords.isFunctionEval(node.escapedText) || keywords.isFunctionArguments(node.escapedText));
         }
 
         function checkStrictModeEvalOrArguments(contextNode: Node, name: Node | undefined) {

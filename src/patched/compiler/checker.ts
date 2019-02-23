@@ -1445,13 +1445,13 @@ namespace ts {
                     case SyntaxKind.GetAccessor:
                     case SyntaxKind.SetAccessor:
                     case SyntaxKind.FunctionDeclaration:
-                        if (meaning & SymbolFlags.Variable && (name === "arguments" || name === unicodeDic.Function.arguments)) {
+                        if (meaning & SymbolFlags.Variable && keywords.isFunctionArguments(name)) {
                             result = argumentsSymbol;
                             break loop;
                         }
                         break;
                     case SyntaxKind.FunctionExpression:
-                        if (meaning & SymbolFlags.Variable && (name === "arguments" || name === unicodeDic.Function.arguments)) {
+                        if (meaning & SymbolFlags.Variable && keywords.isFunctionArguments(name)) {
                             result = argumentsSymbol;
                             break loop;
                         }
@@ -8140,7 +8140,7 @@ namespace ts {
                 if (!node) return false;
                 switch (node.kind) {
                     case SyntaxKind.Identifier:
-                        return ((<Identifier>node).escapedText === "arguments" || (<Identifier>node).escapedText === unicodeDic.Function.arguments) && isExpressionNode(node);
+                        return keywords.isFunctionArguments((<Identifier>node).escapedText) && isExpressionNode(node);
 
                     case SyntaxKind.PropertyDeclaration:
                     case SyntaxKind.MethodDeclaration:

@@ -1,8 +1,20 @@
-@@ -99386,16 +99386,134 @@
- guments%22
-+ %7C%7C%0D%0A              node.escapedText === unicodeDic.Function.eval %7C%7C node.escapedText === unicodeDic.Function.arguments
- );%0D%0A    
-@@ -110749,16 +110749,141 @@
+@@ -99319,24 +99319,48 @@
+ r(node) && (
++keywords.isFunctionEval(
+ node.escaped
+@@ -99367,23 +99367,42 @@
+ Text
+- === %22eval%22
++)
+  %7C%7C 
++keywords.isFunctionArguments(
+ node
+@@ -99417,24 +99417,9 @@
+ Text
+- === %22arguments%22
++)
+ );%0D%0A
+@@ -110659,16 +110659,141 @@
  strict'%22
 + %7C%7C%0D%0A            nodeText === %60%22$%7BunicodeDic.JavaScript.use_strict%7D%22%60 %7C%7C nodeText === %60'$%7BunicodeDic.JavaScript.use_strict%7D'%60
  ;%0D%0A     

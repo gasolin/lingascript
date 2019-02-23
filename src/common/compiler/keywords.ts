@@ -12,6 +12,9 @@ namespace ts {
         isFunctionEval: function(value: __String) {
             return value === "eval" || value === unicodeDic.Function.eval
         },
+        isFunctionArguments: function(value: __String) {
+            return value === 'arguments' || value === unicodeDic.Function.arguments
+        },
         isJavaScriptExports: function(value: __String) {
             return value === "exports" || value === unicodeDic.JavaScript.exports
         }
