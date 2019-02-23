@@ -1,5 +1,7 @@
 # 0.-.- In Porgress
 
+- point [lang] specific package.json homepage to src/[lang]
+
 # 0.3.0 (2019/2/23)
 
 - Based on TypeScript v3.3.3333
