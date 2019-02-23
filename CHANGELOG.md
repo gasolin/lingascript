@@ -1,12 +1,16 @@
 # 0.-.- In Porgress
 
-- Wrap keyword detector as functions #18
+# 0.3.0 (2019/2/23)
+
+- Based on TypeScript v3.3.3333
 - Show localized diagnostic message in command line tool by default #21
 - Document `tsc --locale` usage in readme
+- (partial) Wrap keyword detector as functions #18
 
 Keywords change:
 - Traditional Chinese
   - while 每當 -> 直到 #20
+  - some unused keyword updates
 - Simplified Chinese
   - while 每当 -> 直到 #20
 
