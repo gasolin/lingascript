@@ -2,11 +2,16 @@
 
 - point [lang] specific package.json homepage to src/[lang]
 
+Refactor:
+- Wrap keyword detector as functions #18
+
 # 0.3.0 (2019/2/23)
 
 - Based on TypeScript v3.3.3333
 - Show localized diagnostic message in command line tool by default #21
 - Document `tsc --locale` usage in readme
+
+Refactor:
 - (partial) Wrap keyword detector as functions #18
 
 Keywords change:

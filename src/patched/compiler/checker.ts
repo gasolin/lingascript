@@ -15572,8 +15572,7 @@ namespace ts {
             const root = getReferenceRoot(node);
             const parent = root.parent;
             const isLengthPushOrUnshift = parent.kind === SyntaxKind.PropertyAccessExpression && (
-                (<PropertyAccessExpression>parent).name.escapedText === "length" ||
-                (<PropertyAccessExpression>parent).name.escapedText === unicodeDic.Array.length ||
+                keywords.isArrayLength((<PropertyAccessExpression>parent).name.escapedText) ||
                 parent.parent.kind === SyntaxKind.CallExpression && isPushOrUnshiftIdentifier((<PropertyAccessExpression>parent).name));
             const isElementAssignment = parent.kind === SyntaxKind.ElementAccessExpression &&
                 (<ElementAccessExpression>parent).expression === root &&
@@ -31010,12 +31009,12 @@ namespace ts {
             const escapedText = node.name.escapedText;
             switch (node.keywordToken) {
                 case SyntaxKind.NewKeyword:
-                    if (escapedText !== "target" && escapedText !== unicodeDic.MetaData.target) {
+                    if (!keywords.isMetaDataTarget(escapedText)) {
                         return grammarErrorOnNode(node.name, Diagnostics._0_is_not_a_valid_meta_property_for_keyword_1_Did_you_mean_2, node.name.escapedText, tokenToString(node.keywordToken), "target");
                     }
                     break;
                 case SyntaxKind.ImportKeyword:
-                    if (escapedText !== "meta" && escapedText !== unicodeDic.MetaData.meta) {
+                    if (!keywords.isMetaDataMeta(escapedText)) {
                         return grammarErrorOnNode(node.name, Diagnostics._0_is_not_a_valid_meta_property_for_keyword_1_Did_you_mean_2, node.name.escapedText, tokenToString(node.keywordToken), "meta");
                     }
                     break;

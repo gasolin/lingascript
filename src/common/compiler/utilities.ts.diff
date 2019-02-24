@@ -1,68 +1,163 @@
-@@ -87850,16 +87850,74 @@
- ototype%22
--
-+ %7C%7C node.arguments%5B1%5D.text === unicodeDic.Object.prototype
+@@ -87812,16 +87812,43 @@
+ nts%5B2%5D, 
++keywords.isObjectPrototype(
+ node.arg
+@@ -87862,31 +87862,28 @@
+ 1%5D.text 
+-===
++as
+  
+-%22p
++__St
+ r
+-ototype%22
++ing)
  );%0D%0A    
-@@ -92272,32 +92272,342 @@
- as __String %7C%7C%0D%0A
-+                    initializer.expression.escapedText === unicodeDic.JavaScript.window as __String %7C%7C%0D%0A                    initializer.expression.escapedText === unicodeDic.JavaScript.self as __String %7C%7C%0D%0A                    initializer.expression.escapedText === unicodeDic.JavaScript.global as __String %7C%7C%0D%0A
+@@ -92100,16 +92100,44 @@
+        (
++keywords.isJavascriptWindow(
+ initiali
+@@ -92166,33 +92166,9 @@
+ Text
+- === %22window%22 as __String
++)
+  %7C%7C%0D
+@@ -92176,36 +92176,58 @@
                  
-@@ -93349,24 +93349,25 @@
+-    
++keywords.isJavaScriptSelf(
+ initializer.expr
+@@ -92248,31 +92248,9 @@
+ Text
+- === %22self%22 as __String
++)
+  %7C%7C%0D
+@@ -92258,36 +92258,60 @@
+                 
+-    
++keywords.isJavaScriptGlobal(
+ initializer.expr
+@@ -92332,33 +92332,9 @@
+ Text
+- === %22global%22 as __String
++)
+ )) &
+@@ -93009,24 +93009,53 @@
  er(node) && 
-+(
++keywords.isJavaScriptExports(
  node.escaped
-@@ -93376,32 +93376,87 @@
- xt === %22exports%22
-+ %7C%7C node.escapedText === unicodeDic.JavaScript.exports)
- ;%0D%0A    %7D%0D%0A%0D%0A    
-@@ -93605,25 +93605,37 @@
+@@ -93054,38 +93054,25 @@
+ .escapedText
+- === %22exports%22
++)
+ ;%0D%0A    %7D%0D%0A%0D%0A
+@@ -93225,25 +93225,61 @@
  pression) &&
 +%0D%0A
   
-+         (
++         keywords.isKeywordModule(
  node.express
-@@ -93663,19 +93663,94 @@
- module%22 
-+%7C%7C node.expression.escapedText === unicodeDic.Keywords.module) 
- &&
-+%0D%0A   
+@@ -93293,33 +93293,61 @@
+ apedText
++) &&%0D%0A        
   
-+      (
+-===
+  
+-%22m
++keyw
+ o
++r
+ d
+-ule%22 && 
++s.isJavaScriptExports(
  node.nam
-@@ -93776,16 +93776,76 @@
- exports%22
-+ %7C%7C node.name.escapedText === unicodeDic.JavaScript.exports)
+@@ -93359,30 +93359,17 @@
+ apedText
+- === %22exports%22
++)
  ;%0D%0A    %7D
-@@ -95508,16 +95508,17 @@
+@@ -95032,16 +95032,43 @@
  ame) && 
-+(
++keywords.isObjectPrototype(
  entityNa
-@@ -95548,24 +95548,88 @@
-  %22prototype%22
-+ %7C%7C entityName.name.escapedText === unicodeDic.Object.prototype)
-  && isEntity
-@@ -97537,16 +97537,234 @@
- exports%22
--
-+ %7C%7C%0D%0A                id.escapedText === unicodeDic.JavaScript.exports %7C%7C%0D%0A                id.escapedText === unicodeDic.Keywords.module && nextToLast.name.escapedText === unicodeDic.JavaScript.exports%0D%0A                
- ) %7B%0D%0A   
-@@ -131460,32 +131460,33 @@
- .Identifier && (
-+(
- %3CIdentifier%3Enode
-@@ -131511,16 +131511,79 @@
- %22Symbol%22
-+ %7C%7C(%3CIdentifier%3Enode).escapedText === unicodeDic.Symbol.Symbol)
- ;%0D%0A    %7D
-@@ -131729,16 +131729,122 @@
- unshift%22
-+ %7C%7C%0D%0A          node.escapedText === unicodeDic.Array.push %7C%7C node.escapedText === unicodeDic.Array.unshift
- ;%0D%0A    %7D
-@@ -184172,32 +184172,33 @@
+@@ -95086,32 +95086,17 @@
+ apedText
+- === %22prototype%22
++)
+  && isEn
+@@ -95592,16 +95592,43 @@
+ ion) && 
++keywords.isObjectPrototype(
+ lhs.name
+@@ -95639,32 +95639,17 @@
+ apedText
+- === %22prototype%22
++)
+  && isOb
+@@ -96899,16 +96899,45 @@
+     if (
++keywords.isJavaScriptExports(
+ id.escap
+@@ -96942,30 +96942,17 @@
+ apedText
+- === %22exports%22
++)
+  %7C%7C%0D%0A   
+@@ -96964,16 +96964,41 @@
+         
++keywords.isKeywordModule(
+ id.escap
+@@ -97007,25 +97007,42 @@
+ Text
++)
+  
+-===
++&&
+  
+-%22m
++keyw
+ o
++r
+ d
+-ule%22 && 
++s.isJavaScriptExports(
+ next
+@@ -97068,22 +97068,9 @@
+ Text
+- === %22exports%22
++)
+ ) %7B%0D
+@@ -130769,32 +130769,56 @@
+ d.Identifier && 
++keywords.isSymbolSymbol(
+ (%3CIdentifier%3Enod
+@@ -130835,21 +130835,9 @@
+ Text
+- === %22Symbol%22
++)
+ ;%0D%0A 
+@@ -130922,24 +130922,45 @@
+      return 
++keywords.isArrayPush(
+ node.escaped
+@@ -130967,23 +130967,37 @@
+ Text
+- === %22push%22
++)
+  %7C%7C 
++keywords.isArrayUnshift(
+ node
+@@ -131012,22 +131012,9 @@
+ Text
+- === %22unshift%22
++)
+ ;%0D%0A 
+@@ -183346,32 +183346,59 @@
  ession(node) && 
-+(
++keywords.isObjectPrototype(
  node.name.escape
-@@ -184218,16 +184218,74 @@
- ototype%22
-+ %7C%7C node.name.escapedText === unicodeDic.Object.prototype)
- ;%0D%0A    %7D
+@@ -183406,24 +183406,9 @@
+ Text
+- === %22prototype%22
++)
+ ;%0D%0A 

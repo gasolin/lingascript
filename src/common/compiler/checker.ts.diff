@@ -150,47 +150,52 @@
   as __String
 +) %7C%7C resolved.members.get(unicodeDic.Function.bind as __String)
  ) && isTypeS
-@@ -932477,24 +932477,124 @@
- length%22 %7C%7C%0D%0A
-+                (%3CPropertyAccessExpression%3Eparent).name.escapedText === unicodeDic.Array.length %7C%7C%0D%0A
-             
-@@ -974798,32 +974798,105 @@
+@@ -932404,32 +932404,55 @@
+                 
++keywords.isArrayLength(
+ (%3CPropertyAccess
+@@ -932490,21 +932490,9 @@
+ Text
+- === %22length%22
++)
+  %7C%7C%0D
+@@ -974709,32 +974709,105 @@
  pe%22 as __String)
 -
 + %7C%7C getPropertyOfType(rightType, unicodeDic.Object.prototype as __String)
  ;%0D%0A             
-@@ -1269637,24 +1269637,46 @@
+@@ -1269548,24 +1269548,46 @@
  on(left) && 
 +keywords.isKeywordFor(
  left.name.es
-@@ -1269688,18 +1269688,9 @@
+@@ -1269599,18 +1269599,9 @@
  Text
 - === %22for%22
 +)
  ) %7B%0D
-@@ -1269781,24 +1269781,49 @@
+@@ -1269692,24 +1269692,49 @@
  er(left) %7C%7C 
 +!keywords.isSymbolSymbol(
  left.escaped
-@@ -1269830,21 +1269830,9 @@
+@@ -1269741,21 +1269741,9 @@
  Text
 - !== %22Symbol%22
 +)
  ) %7B%0D
-@@ -1361006,24 +1361006,48 @@
+@@ -1360917,24 +1360917,48 @@
  entifier && 
 +keywords.isFunctionEval(
  (node as Ide
-@@ -1361070,19 +1361070,9 @@
+@@ -1360981,19 +1360981,9 @@
  Text
 - === %22eval%22
 +)
  ;%0D%0A 
-@@ -1363374,16 +1363374,46 @@
+@@ -1363285,16 +1363285,46 @@
  eft) %7C%7C 
 +!keywords.isJavaScriptExports(
  unescape
-@@ -1363453,21 +1363453,20 @@
+@@ -1363364,21 +1363364,20 @@
  xt) 
 -!==
 +as
@@ -201,48 +206,56 @@
 -ts%22
 +ing)
  )) %7B
-@@ -1408862,32 +1408862,324 @@
+@@ -1408773,32 +1408773,324 @@
  (memberName) %7B%0D%0A
 +                        case unicodeDic.Function.name:%0D%0A                        case unicodeDic.Function.length:%0D%0A                        case unicodeDic.Function.caller:%0D%0A                        case unicodeDic.Function.arguments:%0D%0A                        case unicodeDic.Object.prototype:%0D%0A
                  
-@@ -1466085,17 +1466085,68 @@
+@@ -1465996,17 +1465996,68 @@
  ifier &&
 +%0D%0A
   
 +                       keywords.isPromisePromise(
  promiseC
-@@ -1466175,25 +1466175,37 @@
+@@ -1466086,25 +1466086,37 @@
  Text
 - === %22Promise%22
 +)
   &&
 +%0D%0A                       
   get
-@@ -1512936,16 +1512936,189 @@
+@@ -1512847,16 +1512847,189 @@
  xports%22)
 -
 +%0D%0A                && !needCollisionCheckForIdentifier(node, name, unicodeDic.Keywords.require) && !needCollisionCheckForIdentifier(node, name, unicodeDic.JavaScript.exports)
  ) %7B%0D%0A   
-@@ -1560581,32 +1560581,120 @@
+@@ -1560492,32 +1560492,120 @@
  xt%22 as __String)
 -
 + %7C%7C%0D%0A                getTypeOfPropertyOfType(type, unicodeDic.Iterator.next as __String)
  ;%0D%0A            i
-@@ -1561984,24 +1561984,25 @@
+@@ -1561895,24 +1561895,25 @@
  xtResult && 
 +(
  getTypeOfPro
-@@ -1562036,32 +1562036,111 @@
+@@ -1561947,32 +1561947,111 @@
  lue%22 as __String
 +) %7C%7C getTypeOfPropertyOfType(nextResult, unicodeDic.Iterator.value as __String)
  );%0D%0A            
-@@ -1827444,16 +1827444,62 @@
- %22target%22
--
-+ && escapedText !== unicodeDic.MetaData.target
- ) %7B%0D%0A   
-@@ -1827844,16 +1827844,60 @@
- = %22meta%22
--
-+ && escapedText !== unicodeDic.MetaData.meta
- ) %7B%0D%0A   
+@@ -1827323,32 +1827323,59 @@
+             if (
++!keywords.isMetaDataTarget(
+ escapedText !== 
+@@ -1827373,21 +1827373,9 @@
+ Text
+- !== %22target%22
++)
+ ) %7B%0D
+@@ -1827702,16 +1827702,41 @@
+     if (
++!keywords.isMetaDataMeta(
+ escapedT
+@@ -1827742,19 +1827742,9 @@
+ Text
+- !== %22meta%22
++)
+ ) %7B%0D

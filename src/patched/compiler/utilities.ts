@@ -1812,7 +1812,7 @@ namespace ts {
                 getDefaultedExpandoInitializer(node.parent.left as EntityNameExpression, node.parent.right, isPrototypeAssignment);
         }
         if (node && isCallExpression(node) && isBindableObjectDefinePropertyCall(node)) {
-            const result = hasExpandoValueProperty(node.arguments[2], node.arguments[1].text === "prototype" || node.arguments[1].text === unicodeDic.Object.prototype);
+            const result = hasExpandoValueProperty(node.arguments[2], keywords.isObjectPrototype(node.arguments[1].text as __String));
             if (result) {
                 return result;
             }
@@ -1895,12 +1895,9 @@ namespace ts {
         if (isIdentifier(name) && isPropertyAccessExpression(initializer)) {
             return (initializer.expression.kind as SyntaxKind.ThisKeyword === SyntaxKind.ThisKeyword ||
                 isIdentifier(initializer.expression) &&
-                (initializer.expression.escapedText === "window" as __String ||
-                    initializer.expression.escapedText === "self" as __String ||
-                    initializer.expression.escapedText === unicodeDic.JavaScript.window as __String ||
-                    initializer.expression.escapedText === unicodeDic.JavaScript.self as __String ||
-                    initializer.expression.escapedText === unicodeDic.JavaScript.global as __String ||
-                    initializer.expression.escapedText === "global" as __String)) &&
+                (keywords.isJavascriptWindow(initializer.expression.escapedText) ||
+                keywords.isJavaScriptSelf(initializer.expression.escapedText) ||
+                keywords.isJavaScriptGlobal(initializer.expression.escapedText))) &&
                 isSameEntityName(name, initializer.name);
         }
         if (isPropertyAccessExpression(name) && isPropertyAccessExpression(initializer)) {
@@ -1917,13 +1914,13 @@ namespace ts {
     }
 
     export function isExportsIdentifier(node: Node) {
-        return isIdentifier(node) && (node.escapedText === "exports" || node.escapedText === unicodeDic.JavaScript.exports);
+        return isIdentifier(node) && keywords.isJavaScriptExports(node.escapedText);
     }
 
     export function isModuleExportsPropertyAccessExpression(node: Node) {
         return isPropertyAccessExpression(node) && isIdentifier(node.expression) &&
-          (node.expression.escapedText === "module" || node.expression.escapedText === unicodeDic.Keywords.module) &&
-          (node.name.escapedText === "exports" || node.name.escapedText === unicodeDic.JavaScript.exports);
+          keywords.isKeywordModule(node.expression.escapedText) &&
+          keywords.isJavaScriptExports(node.name.escapedText);
     }
 
     /// Given a BinaryExpression, returns SpecialPropertyAssignmentKind for the various kinds of property
@@ -1952,7 +1949,7 @@ namespace ts {
             if (isExportsIdentifier(entityName) || isModuleExportsPropertyAccessExpression(entityName)) {
                 return AssignmentDeclarationKind.ObjectDefinePropertyExports;
             }
-            if (isPropertyAccessExpression(entityName) && (entityName.name.escapedText === "prototype" || entityName.name.escapedText === unicodeDic.Object.prototype) && isEntityNameExpression(entityName.expression)) {
+            if (isPropertyAccessExpression(entityName) && keywords.isObjectPrototype(entityName.name.escapedText) && isEntityNameExpression(entityName.expression)) {
                 return AssignmentDeclarationKind.ObjectDefinePrototypeProperty;
             }
             return AssignmentDeclarationKind.ObjectDefinePropertyValue;
@@ -1962,7 +1959,7 @@ namespace ts {
             return AssignmentDeclarationKind.None;
         }
         const lhs = expr.left;
-        if (isEntityNameExpression(lhs.expression) && lhs.name.escapedText === "prototype" && isObjectLiteralExpression(getInitializerOfBinaryExpression(expr))) {
+        if (isEntityNameExpression(lhs.expression) && keywords.isObjectPrototype(lhs.name.escapedText) && isObjectLiteralExpression(getInitializerOfBinaryExpression(expr))) {
                 // F.prototype = { ... }
                 return AssignmentDeclarationKind.Prototype;
         }
@@ -1989,11 +1986,8 @@ namespace ts {
             }
             Debug.assert(isIdentifier(nextToLast.expression));
             const id = nextToLast.expression as Identifier;
-            if (id.escapedText === "exports" ||
-                id.escapedText === "module" && nextToLast.name.escapedText === "exports" ||
-                id.escapedText === unicodeDic.JavaScript.exports ||
-                id.escapedText === unicodeDic.Keywords.module && nextToLast.name.escapedText === unicodeDic.JavaScript.exports
-                ) {
+            if (keywords.isJavaScriptExports(id.escapedText) ||
+                keywords.isKeywordModule(id.escapedText) && keywords.isJavaScriptExports(nextToLast.name.escapedText)) {
                 // exports.name = expr OR module.exports.name = expr
                 return AssignmentDeclarationKind.ExportsProperty;
             }
@@ -2747,12 +2741,11 @@ namespace ts {
      * Includes the word "Symbol" with unicode escapes
      */
     export function isESSymbolIdentifier(node: Node): boolean {
-        return node.kind === SyntaxKind.Identifier && ((<Identifier>node).escapedText === "Symbol" ||(<Identifier>node).escapedText === unicodeDic.Symbol.Symbol);
+        return node.kind === SyntaxKind.Identifier && keywords.isSymbolSymbol((<Identifier>node).escapedText);
     }
 
     export function isPushOrUnshiftIdentifier(node: Identifier) {
-        return node.escapedText === "push" || node.escapedText === "unshift" ||
-          node.escapedText === unicodeDic.Array.push || node.escapedText === unicodeDic.Array.unshift;
+        return keywords.isArrayPush(node.escapedText) || keywords.isArrayUnshift(node.escapedText);
     }
 
     export function isParameterDeclaration(node: VariableLikeDeclaration) {
@@ -3903,7 +3896,7 @@ namespace ts {
     }
 
     export function isPrototypeAccess(node: Node): node is PropertyAccessExpression {
-        return isPropertyAccessExpression(node) && (node.name.escapedText === "prototype" || node.name.escapedText === unicodeDic.Object.prototype);
+        return isPropertyAccessExpression(node) && keywords.isObjectPrototype(node.name.escapedText);
     }
 
     export function isRightSideOfQualifiedNameOrPropertyAccess(node: Node) {

@@ -14,7 +14,35 @@
 - === %22arguments%22
 +)
  );%0D%0A
-@@ -110659,16 +110659,141 @@
- strict'%22
-+ %7C%7C%0D%0A            nodeText === %60%22$%7BunicodeDic.JavaScript.use_strict%7D%22%60 %7C%7C nodeText === %60'$%7BunicodeDic.JavaScript.use_strict%7D'%60
- ;%0D%0A     
+@@ -110605,39 +110605,39 @@
+ urn 
+-n
++keyw
+ o
++r
+ d
+-eTex
++s.isJavaScrip
+ t
+- === '%22u
++U
+ se
+- s
++S
+ trict
+-%22' %7C%7C 
++(
+ node
+@@ -110645,26 +110645,20 @@
+ ext 
+-=== %22'u
++a
+ s
+-e
+  
+-s
++__S
+ tri
+-ct'%22
++ng)
+ ;%0D%0A 

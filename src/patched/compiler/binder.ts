@@ -2090,8 +2090,7 @@ namespace ts {
 
             // Note: the node text must be exactly "use strict" or 'use strict'.  It is not ok for the
             // string to contain unicode escapes (as per ES5).
-            return nodeText === '"use strict"' || nodeText === "'use strict'" ||
-            nodeText === `"${unicodeDic.JavaScript.use_strict}"` || nodeText === `'${unicodeDic.JavaScript.use_strict}'`;
+            return keywords.isJavaScriptUseStrict(nodeText as __String);
         }
 
         function bindWorker(node: Node) {
