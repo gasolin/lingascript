@@ -2,7 +2,7 @@
 
 **This project is in early alpha stage, please use it at your own risk**
 
-LingaScript is the TypeScript with multilingal support, which support write code with non-English languages.
+LingaScript is the [TypeScript](https://github.com/Microsoft/TypeScript) with multilingal support, which enable users to write code with non-English languages.
 
 Basically LingaScript is derived from TypeScript (and Javascript). LingaScript can be compiled to Javascript and be used across the Javascript ecosystem.
 
@@ -14,8 +14,8 @@ Basically LingaScript is derived from TypeScript (and Javascript). LingaScript c
 You can find available built version with lingascript-[lang] [in npm](https://www.npmjs.com/search?q=keywords:lingascript).
 
 - English (en, [derived from TypeScript](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), Package: Typescript [![npm version](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript))
-- 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: lingascript-cn [![npm version](https://img.shields.io/npm/v/lingascript-cn.svg)](https://www.npmjs.com/package/lingascript-cn))
-- 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: lingascript-tw [![npm version](https://img.shields.io/npm/v/lingascript-tw.svg)](https://www.npmjs.com/package/lingascript-tw))
+- 简体中文 (Simplified Chinese, cn, [支援的关键字](https://github.com/gasolin/lingascript/blob/master/src/cn/language.ts), 套件: [lingascript-cn](https://www.npmjs.com/package/lingascript-cn) [![npm version](https://img.shields.io/npm/v/lingascript-cn.svg)](https://www.npmjs.com/package/lingascript-cn))
+- 正體中文 (Traditional Chinese, tw, [支援的關鍵字](https://github.com/gasolin/lingascript/blob/master/src/tw/language.ts), 套件: [lingascript-tw](https://www.npmjs.com/package/lingascript-tw) [![npm version](https://img.shields.io/npm/v/lingascript-tw.svg)](https://www.npmjs.com/package/lingascript-tw))
 
 
 ## Usage
